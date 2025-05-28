@@ -41,10 +41,17 @@
   --fs-64: 4rem;
   --fs-72: 4.5rem;
 
+  --logo-size-desktop: 100px;
+  --logo-size-tablet: 74px;
+  --logo-size-mobile: 64px;
+
   /* borders */
   --border-width: 2px;
   --border-style: solid;
   --border-color: var(--color-caramel);
+
+  /* Transition */
+  --transition-base: 0.3s ease-out;
 }
 
 /* Mode sombre */
