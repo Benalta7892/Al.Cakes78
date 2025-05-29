@@ -1,4 +1,28 @@
-/* CSS Hero section */
-
 .hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 65vh;
+  background: #000;
+}
+
+@media (max-width: 850px) {
+  .hero {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 690px) {
+  .hero {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    max-height: 30vh;
+  }
 }
