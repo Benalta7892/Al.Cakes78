@@ -21,7 +21,7 @@ const Hero = () => {
         <div className={styles.heroButtons}>
           <button className={styles.primaryBtn}>Découvrir</button>
           <button className={styles.secondaryBtn}>
-            Besoin d'un renseignement ?
+            Besoin d&apos;un renseignement ?
           </button>
         </div>
       </div>
