@@ -1,6 +1,6 @@
 /* === NAVBAR GLOBAL === */
 .navbar {
-  position: fixed;
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;

@@ -62,16 +62,24 @@
   }
 } */
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   /* background: var(--background); */
   color: var(--foreground);
   font-family: var(--font-domine);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
+  flex: 1;
   margin: 0 122px;
   background-color: rgb(238, 156, 156);
-  height: 500px;
+  /* min-height: 100%; */
 }
 
 .bordered {
