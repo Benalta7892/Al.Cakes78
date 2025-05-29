@@ -14,9 +14,11 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ stopOnInteraction: false, delay: 10000 }),
-  ]);
+  const isDev = true;
+  const plugins = isDev
+    ? []
+    : [Autoplay({ stopOnInteraction: false, delay: 10000 })];
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay;

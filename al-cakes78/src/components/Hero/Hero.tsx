@@ -16,6 +16,15 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <HeroCarousel slides={SLIDES} options={OPTIONS} />
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroTitle}>Entremets pour vos Évènements</h1>
+        <div className={styles.heroButtons}>
+          <button className={styles.primaryBtn}>Découvrir</button>
+          <button className={styles.secondaryBtn}>
+            Besoin d'un renseignement ?
+          </button>
+        </div>
+      </div>
     </section>
   );
 };
