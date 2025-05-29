@@ -70,6 +70,7 @@
 .navlinks-container {
   display: flex;
   align-items: center;
+  z-index: 9999;
 }
 
 .navlinks-container a {

@@ -1,10 +1,21 @@
 import styles from "@/styles/Hero.module.css";
 import HeroCarousel from "./HeroCarousel";
+import { EmblaOptionsType } from "embla-carousel";
+
+const OPTIONS: EmblaOptionsType = { loop: true };
+// const SLIDE_COUNT = 3;
+// const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+
+const SLIDES = [
+  "/images/slide1.jpg",
+  "/images/slide2.jpg",
+  "/images/slide3.jpg",
+];
 
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <HeroCarousel />
+      <HeroCarousel slides={SLIDES} options={OPTIONS} />
     </section>
   );
 };

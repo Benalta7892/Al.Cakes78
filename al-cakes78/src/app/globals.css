@@ -52,6 +52,12 @@
 
   /* Transition */
   --transition-base: 0.3s ease-out;
+
+  /* emblaCarousel */
+  --text-body: rgb(54, 49, 61);
+  --detail-high-contrast: rgb(192, 192, 192);
+  --detail-medium-contrast: var(--color-caramel);
+  --text-high-contrast-rgb-value: 49, 49, 49;
 }
 
 /* Mode sombre */
@@ -78,10 +84,16 @@ body {
 main {
   flex: 1;
   margin: 0 122px;
-  background-color: rgb(238, 156, 156);
+  background-color: var(--background);
   /* min-height: 100%; */
 }
 
 .bordered {
   border: var(--border-width) var(--border-style) var(--border-color);
+}
+
+@media (max-width: 850px) {
+  main {
+    margin: 0 40px;
+  }
 }
