@@ -12,20 +12,18 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const navLinksContainer = navLinksRef.current;
-    if (!navLinksContainer) return;
-
-    const observer = new ResizeObserver((entries) => {
-      if (entries[0].contentRect.width <= 690) {
-        navLinksContainer.style.transition = "transform 0.3s ease-out";
+    const handleResize = () => {
+      if (window.innerWidth <= 690) {
+        navLinksRef.current!.style.transition = "transform 0.3s ease-out";
       } else {
-        navLinksContainer.style.transition = "none";
+        navLinksRef.current!.style.transition = "none";
       }
-    });
+    };
 
-    observer.observe(document.body);
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    return () => observer.disconnect();
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
