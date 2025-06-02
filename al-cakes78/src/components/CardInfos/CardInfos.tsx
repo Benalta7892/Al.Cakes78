@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import InfoCard from "./InfoCard";
 import InfoCardReverse from "./InfoCardReverse";
 import styles from "@/styles/CardInfos.module.css";
@@ -21,31 +22,39 @@ const CardInfos = () => {
   }, []);
 
   return (
-    <section>
-      <div className={styles["cards-container"]}>
-        <InfoCard
-          title="Le gout de la qualité"
-          text="Des saveurs vraies, choisies avec soin, parce que chaque bouchée parle d’elle-même."
-          imageSrc="/images/cardinfo1.jpg"
-          alt="Image pour illustrer le gout de la qualité"
-        />
+    <section className={styles["cards-section"]}>
+      {/* <div className={styles["cards-container"]}> */}
+      <InfoCard
+        title="Le gout de la qualité"
+        text="Des saveurs vraies, choisies avec soin, parce que chaque bouchée parle d’elle-même."
+        imageSrc="/images/cardinfo1.jpg"
+        alt="Image pour illustrer le gout de la qualité"
+      />
 
-        {isMobile ? (
-          <InfoCard
-            title="Le gout de la beauté"
-            text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
-            imageSrc="/images/cardinfo2.jpg"
-            alt="Image pour illustrer la beauté des gâteaux"
-          />
-        ) : (
-          <InfoCardReverse
-            title="Le gout de la beauté"
-            text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
-            imageSrc="/images/cardinfo2.jpg"
-            alt="Image pour illustrer la beauté des gâteaux"
-          />
-        )}
-      </div>
+      <Image
+        src="/images/vector.svg"
+        width={594}
+        height={100}
+        alt="Image de séparation"
+        className={styles["vector-image"]}
+      />
+
+      {isMobile ? (
+        <InfoCard
+          title="Le gout de la beauté"
+          text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
+          imageSrc="/images/cardinfo2.jpg"
+          alt="Image pour illustrer la beauté des gâteaux"
+        />
+      ) : (
+        <InfoCardReverse
+          title="Le gout de la beauté"
+          text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
+          imageSrc="/images/cardinfo2.jpg"
+          alt="Image pour illustrer la beauté des gâteaux"
+        />
+      )}
+      {/* </div> */}
     </section>
   );
 };
