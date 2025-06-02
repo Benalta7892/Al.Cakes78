@@ -11,11 +11,14 @@
 .image-wrapper {
   position: relative;
   width: 70%;
+  height: 100%;
 }
 
 .image-card-info {
   object-fit: cover;
   box-shadow: 2px 4px 20px -2px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
 }
 
 /* === CONTENT SECTION === */
@@ -76,14 +79,46 @@
 /* === RESPONSIVE CARDS === */
 /* ============================== */
 
-/* ↓ TABLETTE — max 850px */
 @media (max-width: 850px) {
 }
 
-/* ↓ MOBILE — max 690px */
 @media (max-width: 690px) {
 }
 
-/* ↓ TRÈS PETIT ÉCRAN — max 500px */
+@media (max-width: 590px) {
+  /* === MAIN CARD CONTAINER === */
+  .card {
+    flex-direction: column-reverse;
+    margin: 48px auto;
+    padding: 0;
+    height: auto;
+  }
+
+  /* === IMAGE SECTION === */
+  .image-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .image-card-info {
+    position: relative !important;
+  }
+
+  /* === CONTENT SECTION === */
+  .card-content {
+    width: 100%;
+  }
+
+  .card-content h2 {
+    padding-left: 0;
+    margin-bottom: 14px;
+  }
+
+  .card-content p {
+    padding: 20px 74px 20px 10px;
+    border-bottom-right-radius: 0;
+  }
+}
+
 @media (max-width: 500px) {
 }
