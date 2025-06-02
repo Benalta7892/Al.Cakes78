@@ -1,8 +1,25 @@
+"use client";
 import InfoCard from "./InfoCard";
 import InfoCardReverse from "./InfoCardReverse";
 import styles from "@/styles/CardInfos.module.css";
+import { useState, useEffect } from "react";
 
 const CardInfos = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth <= 590);
+    };
+
+    checkWidth(); // Initial check
+    window.addEventListener("resize", checkWidth);
+
+    return () => {
+      window.removeEventListener("resize", checkWidth);
+    };
+  }, []);
+
   return (
     <section>
       <div className={styles["cards-container"]}>
@@ -13,12 +30,21 @@ const CardInfos = () => {
           alt="Image pour illustrer le gout de la qualité"
         />
 
-        <InfoCardReverse
-          title="Le gout de la beauté"
-          text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
-          imageSrc="/images/cardinfo2.jpg"
-          alt="Image pour illustrer la beauté des gâteaux"
-        />
+        {isMobile ? (
+          <InfoCard
+            title="Le gout de la beauté"
+            text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
+            imageSrc="/images/cardinfo2.jpg"
+            alt="Image pour illustrer la beauté des gâteaux"
+          />
+        ) : (
+          <InfoCardReverse
+            title="Le gout de la beauté"
+            text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
+            imageSrc="/images/cardinfo2.jpg"
+            alt="Image pour illustrer la beauté des gâteaux"
+          />
+        )}
       </div>
     </section>
   );
