@@ -36,7 +36,7 @@ const CardInfos = () => {
         width={594}
         height={100}
         alt="Image de séparation"
-        className={styles["vector-image"]}
+        className="vector-image"
       />
 
       {isMobile ? (

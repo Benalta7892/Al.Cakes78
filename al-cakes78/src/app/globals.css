@@ -1,9 +1,7 @@
+/* === Tailwind === */
 @import "tailwindcss";
 
-/* * {
-  box-shadow: 0 0 0 3px red inset;
-} */
-
+/* === RESET === */
 *,
 ::before,
 ::after {
@@ -12,14 +10,18 @@
   padding: 0;
 }
 
+/* Debug uniquement, à retirer en prod */
+/* * {
+  box-shadow: 0 0 0 3px red inset;
+} */
+
+/* === ROOT VARIABLES === */
 :root {
   /* Colors */
   --background: #fff5e9;
   --foreground: #381a0f;
   --color-chocolate: #381a0f;
   --color-caramel: #9a6f46;
-
-  /* Active */
   --color-chocolate-active: #2f150c;
 
   /* Fonts */
@@ -27,7 +29,7 @@
   --font-mono: var(--font-geist-mono);
   --font-domine: var(--font-domine);
 
-  /* Font-size */
+  /* Font Sizes */
   --fs-12: 0.75rem;
   --fs-14: 0.875rem;
   --fs-16: 1rem;
@@ -41,11 +43,12 @@
   --fs-64: 4rem;
   --fs-72: 4.5rem;
 
+  /* Sizes */
   --logo-size-desktop: 100px;
   --logo-size-tablet: 74px;
   --logo-size-mobile: 64px;
 
-  /* borders */
+  /* Borders */
   --border-width: 2px;
   --border-style: solid;
   --border-color: var(--color-caramel);
@@ -53,21 +56,24 @@
   /* Transition */
   --transition-base: 0.3s ease-out;
 
-  /* emblaCarousel */
+  /* Embla Carousel */
   --text-body: rgb(54, 49, 61);
   --detail-high-contrast: rgb(192, 192, 192);
   --detail-medium-contrast: var(--color-caramel);
   --text-high-contrast-rgb-value: 49, 49, 49;
 }
 
-/* Mode sombre */
-/* @media (prefers-color-scheme: dark) {
+/* === DARK MODE SUPPORT (optional) === */
+/*
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #f1f1f1;  #fff5e9
+    --background: #f1f1f1;
     --foreground: #9a6f46;
   }
-} */
+}
+*/
 
+/* === LAYOUT GLOBAL === */
 html,
 body {
   min-height: 100%;
@@ -82,19 +88,55 @@ body {
   overflow-x: hidden;
 }
 
+/* === MAIN === */
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 122px;
   background-color: var(--background);
-  /* min-height: 100%; */
 }
 
-.bordered {
-  border: var(--border-width) var(--border-style) var(--border-color);
-}
-
+/* Responsive main */
 @media (max-width: 850px) {
   main {
     margin: 0 40px;
   }
+}
+
+/* === SECTIONS === */
+section {
+  width: 100%;
+}
+
+/* === UTILITIES === */
+
+/* Separator */
+.vector-image {
+  margin: 72px auto;
+}
+
+/* Responsive separator */
+@media (max-width: 850px) {
+  .vector-image {
+    margin: 48px auto;
+  }
+}
+
+@media (max-width: 690px) {
+  .vector-image {
+    margin: 32px auto;
+  }
+}
+
+@media (max-width: 590px) {
+  .vector-image {
+    margin: 24px auto;
+  }
+}
+
+/* Bordered Elements */
+.bordered {
+  border: var(--border-width) var(--border-style) var(--border-color);
 }
