@@ -38,7 +38,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   );
 
   return (
-    <section className={styles.embla}>
+    <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
           {slides.map((src, index) => (
@@ -68,7 +68,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
