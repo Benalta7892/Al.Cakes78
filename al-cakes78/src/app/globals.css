@@ -117,6 +117,10 @@ section {
   margin: 72px auto;
 }
 
+.vector-after-hero {
+  margin-top: 0;
+}
+
 /* Responsive separator */
 @media (max-width: 850px) {
   .vector-image {
