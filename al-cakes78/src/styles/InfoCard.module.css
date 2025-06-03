@@ -1,11 +1,20 @@
 /* === MAIN CARD CONTAINER === */
 .card {
   display: flex;
-  margin: 72px auto;
+  margin: 0 auto;
   padding: 0 34px;
   height: 314px;
   max-width: 980px;
   width: 100%;
+}
+
+/* Responsive Card */
+@media (max-width: 590px) {
+  .card {
+    flex-direction: column-reverse;
+    padding: 0;
+    height: auto;
+  }
 }
 
 /* === IMAGE SECTION === */
@@ -20,6 +29,18 @@
   box-shadow: 2px 4px 20px -2px rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+}
+
+/* Responsive Image */
+@media (max-width: 590px) {
+  .image-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .image-card-info {
+    position: relative !important;
+  }
 }
 
 /* === CONTENT SECTION === */
@@ -49,6 +70,27 @@
   display: flex;
   align-items: center;
   padding-inline: 20px;
+  border: 2px solid #9a6f46;
+  border-left: none;
+}
+
+/* Responsive Content */
+@media (max-width: 590px) {
+  .card-content {
+    width: 100%;
+  }
+
+  .card-content h2 {
+    padding-left: 0;
+    margin-bottom: 14px;
+  }
+
+  .card-content p {
+    padding: 20px 74px 20px 10px;
+    border-bottom-right-radius: 0;
+    border-left: 2px solid #9a6f46;
+    border-bottom: none;
+  }
 }
 
 /* === REVERSED CARD === */
@@ -74,52 +116,6 @@
   border-bottom-left-radius: 124px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-}
-
-/* ============================== */
-/* === RESPONSIVE CARDS === */
-/* ============================== */
-
-@media (max-width: 850px) {
-}
-
-@media (max-width: 690px) {
-}
-
-@media (max-width: 590px) {
-  /* === MAIN CARD CONTAINER === */
-  .card {
-    flex-direction: column-reverse;
-    margin: 48px auto;
-    padding: 0;
-    height: auto;
-  }
-
-  /* === IMAGE SECTION === */
-  .image-wrapper {
-    width: 100%;
-    height: 200px;
-  }
-
-  .image-card-info {
-    position: relative !important;
-  }
-
-  /* === CONTENT SECTION === */
-  .card-content {
-    width: 100%;
-  }
-
-  .card-content h2 {
-    padding-left: 0;
-    margin-bottom: 14px;
-  }
-
-  .card-content p {
-    padding: 20px 74px 20px 10px;
-    border-bottom-right-radius: 0;
-  }
-}
-
-@media (max-width: 500px) {
+  border: 2px solid #9a6f46;
+  border-right: none;
 }

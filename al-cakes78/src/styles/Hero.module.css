@@ -1,88 +1,96 @@
+/* === HERO SECTION === */
 .hero {
-  width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
+  width: 100vw;
+  height: 65vh;
   margin-left: -50vw;
   margin-right: -50vw;
-  height: 65vh;
+  margin-bottom: 72px;
 }
 
+/* Responsive Heights */
+@media (max-width: 850px) {
+  .hero {
+    height: 50vh;
+    margin-bottom: 48px;
+  }
+}
+@media (max-width: 690px) {
+  .hero {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 590px) {
+  .hero {
+    margin-bottom: 24px;
+  }
+}
+
+/* === HERO CONTENT (Text + Buttons) === */
 .heroContent {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  text-align: center;
-  color: white;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  text-align: center;
+  color: white;
 }
 
+/* === TITLE === */
 .heroTitle {
   font-size: clamp(1.4rem, 4vw, 3rem);
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+/* Responsive Title */
+@media (max-width: 500px) {
+  .heroTitle {
+    margin-bottom: 0;
+  }
+}
+
+/* === BUTTONS CONTAINER === */
 .heroButtons {
   display: flex;
   justify-content: center;
-  gap: 0.4rem;
   flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
+/* === BUTTONS STYLE === */
 .primaryBtn,
 .secondaryBtn {
   padding: 0.4rem 1.6rem;
   font-size: clamp(0.4rem, 2.5vw, 1rem);
   border: none;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
+/* Primary */
 .primaryBtn {
   background-color: var(--color-caramel);
   color: white;
   border: 1px solid white;
 }
-
 .primaryBtn:hover {
   background-color: var(--color-chocolate);
 }
 
+/* Secondary */
 .secondaryBtn {
   background-color: transparent;
   color: white;
   border: 1px solid white;
   white-space: nowrap;
 }
-
 .secondaryBtn:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 850px) {
-  .hero {
-    height: 50vh;
-  }
-}
-
-@media (max-width: 690px) {
-  .hero {
-    max-height: 40vh;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero {
-    max-height: 30vh;
-  }
-
-  .heroTitle {
-    margin-bottom: 0rem;
-  }
 }
