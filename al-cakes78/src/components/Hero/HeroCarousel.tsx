@@ -5,7 +5,7 @@ import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import styles from "@/styles/EmblaCarousel.module.css"; // ou le bon chemin vers ton module CSS
+import styles from "./EmblaCarousel.module.css"; // ou le bon chemin vers ton module CSS
 import Image from "next/image";
 
 type PropType = {

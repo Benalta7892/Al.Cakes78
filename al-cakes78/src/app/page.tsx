@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero/Hero";
 import CardInfos from "@/components/CardInfos/CardInfos";
+import FeaturedCakes from "@/components/FeaturedCakes/FeaturedCakes";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <Hero />
+
       <Image
         src="/images/vector.svg"
         width={594}
@@ -14,6 +16,7 @@ export default function Home() {
         className="vector-image vector-after-hero"
       />
       <CardInfos />
+
       <Image
         src="/images/vector.svg"
         width={594}
@@ -21,6 +24,8 @@ export default function Home() {
         alt="Image de séparation"
         className="vector-image"
       />
+
+      <FeaturedCakes />
     </>
   );
 }

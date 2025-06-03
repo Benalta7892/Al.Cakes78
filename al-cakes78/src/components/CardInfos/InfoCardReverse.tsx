@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/styles/InfoCard.module.css";
+import styles from "./InfoCard.module.css";
 
 type Props = {
   title: string;

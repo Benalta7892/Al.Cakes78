@@ -2,7 +2,7 @@
 import Image from "next/image";
 import InfoCard from "./InfoCard";
 import InfoCardReverse from "./InfoCardReverse";
-import styles from "@/styles/CardInfos.module.css";
+import styles from "./CardInfos.module.css";
 import { useState, useEffect } from "react";
 
 const CardInfos = () => {

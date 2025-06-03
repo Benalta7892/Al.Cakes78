@@ -1,4 +1,4 @@
-import styles from "@/styles/Hero.module.css";
+import styles from "./Hero.module.css";
 import HeroCarousel from "./HeroCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import Link from "next/link";

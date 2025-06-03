@@ -124,19 +124,19 @@ section {
 /* Responsive separator */
 @media (max-width: 850px) {
   .vector-image {
-    margin: 48px auto;
+    margin-bottom: 48px;
   }
 }
 
 @media (max-width: 690px) {
   .vector-image {
-    margin: 32px auto;
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 590px) {
   .vector-image {
-    margin: 24px auto;
+    margin-bottom: 24px;
   }
 }
 
