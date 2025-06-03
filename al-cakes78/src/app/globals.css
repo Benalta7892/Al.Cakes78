@@ -118,25 +118,25 @@ section {
 }
 
 .vector-after-hero {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 /* Responsive separator */
 @media (max-width: 850px) {
   .vector-image {
-    margin-bottom: 48px;
+    margin: 48px auto;
   }
 }
 
 @media (max-width: 690px) {
   .vector-image {
-    margin-bottom: 32px;
+    margin: 32px auto;
   }
 }
 
 @media (max-width: 590px) {
   .vector-image {
-    margin-bottom: 24px;
+    margin: 24px auto;
   }
 }
 
