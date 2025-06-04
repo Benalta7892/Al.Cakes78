@@ -2,6 +2,7 @@ import styles from "./FeaturedCakes.module.css";
 import { CAKES } from "@/data/cakes";
 import FeaturedCakesCarousel from "./FeaturedCakesCarousel";
 import { EmblaOptionsType } from "embla-carousel";
+import Link from "next/link";
 // import Link from "next/link";
 
 const FeaturedCakes = () => {
@@ -10,7 +11,15 @@ const FeaturedCakes = () => {
 
   return (
     <section className={styles["featured-cakes-section"]}>
-      <FeaturedCakesCarousel cakes={featuredCakes} options={OPTIONS} />
+      <h2>L&apos;envie commence ici</h2>
+
+      <div className={styles["carousel-wrapper"]}>
+        <FeaturedCakesCarousel cakes={featuredCakes} options={OPTIONS} />
+      </div>
+
+      <Link href={"/gateaux"} className="btn btn-primary">
+        Découvrir tous nos gâteaux
+      </Link>
     </section>
   );
 };

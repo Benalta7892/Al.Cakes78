@@ -1,7 +1,9 @@
-/* === Tailwind === */
+/* === TAILWIND === */
+
 @import "tailwindcss";
 
 /* === RESET === */
+
 *,
 ::before,
 ::after {
@@ -16,6 +18,7 @@
 } */
 
 /* === ROOT VARIABLES === */
+
 :root {
   /* Colors */
   --background: #fff5e9;
@@ -64,6 +67,7 @@
 }
 
 /* === DARK MODE SUPPORT (optional) === */
+
 /*
 @media (prefers-color-scheme: dark) {
   :root {
@@ -74,6 +78,7 @@
 */
 
 /* === LAYOUT GLOBAL === */
+
 html,
 body {
   min-height: 100%;
@@ -89,6 +94,7 @@ body {
 }
 
 /* === MAIN === */
+
 main {
   flex: 1;
   display: flex;
@@ -106,8 +112,67 @@ main {
 }
 
 /* === SECTIONS === */
+
 section {
   width: 100%;
+}
+
+/* === HEADINGS === */
+
+h2 {
+  font-size: var(--fs-24);
+  color: var(--color-chocolate);
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: var(--fs-20);
+  color: var(--color-chocolate);
+  font-weight: bold;
+}
+
+/* === PARAGRAPHS === */
+
+p {
+  font-size: var(--fs-16);
+  line-height: 1.6;
+  color: var(--color-caramel);
+}
+
+/* === BUTTONS === */
+
+/* Base */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1.6rem;
+  font-size: clamp(0.4rem, 2.5vw, 1rem);
+  transition: background 0.3s;
+}
+
+/* Primary */
+.btn-primary {
+  background-color: var(--color-caramel);
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-chocolate);
+}
+
+/* Secondary */
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* === UTILITIES === */
@@ -143,4 +208,7 @@ section {
 /* Bordered Elements */
 .bordered {
   border: var(--border-width) var(--border-style) var(--border-color);
+  padding: 8px;
+  height: 100%;
+  width: 100%;
 }

@@ -1,4 +1,5 @@
 /* === HERO SECTION === */
+
 .hero {
   position: relative;
   width: 100vw;
@@ -27,7 +28,8 @@
 }
 
 /* === HERO CONTENT (Text + Buttons) === */
-.heroContent {
+
+.hero-content {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -42,7 +44,8 @@
 }
 
 /* === TITLE === */
-.heroTitle {
+
+.hero-title {
   font-size: clamp(1.4rem, 4vw, 3rem);
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -50,47 +53,16 @@
 
 /* Responsive Title */
 @media (max-width: 500px) {
-  .heroTitle {
+  .hero-title {
     margin-bottom: 0;
   }
 }
 
 /* === BUTTONS CONTAINER === */
-.heroButtons {
+
+.hero-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.4rem;
-}
-
-/* === BUTTONS STYLE === */
-.primaryBtn,
-.secondaryBtn {
-  padding: 0.4rem 1.6rem;
-  font-size: clamp(0.4rem, 2.5vw, 1rem);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-/* Primary */
-.primaryBtn {
-  background-color: var(--color-caramel);
-  color: white;
-  border: 1px solid white;
-}
-.primaryBtn:hover {
-  background-color: var(--color-chocolate);
-}
-
-/* Secondary */
-.secondaryBtn {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  white-space: nowrap;
-}
-.secondaryBtn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }

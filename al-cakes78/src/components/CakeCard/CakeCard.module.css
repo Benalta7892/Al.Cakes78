@@ -1,0 +1,39 @@
+/* === CAKE CARD === */
+
+.cake-card-wrapper {
+  height: 100%;
+  padding: 10px;
+}
+
+.cake-card-link {
+  display: block;
+}
+
+.cake-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--background);
+  padding: 10px;
+  height: 100%;
+}
+
+/* === CAKE CARD CONTENT === */
+
+.cake-card-content {
+  /* flex: 0.8; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+/* === PRICE === */
+
+.cake-card-price {
+  font-size: var(--fs-20);
+  color: var(--color-chocolate);
+}

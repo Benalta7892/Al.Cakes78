@@ -15,15 +15,15 @@ const SLIDES = [
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section className={styles["hero"]}>
       <HeroCarousel slides={SLIDES} options={OPTIONS} />
-      <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>Entremets pour vos Évènements</h1>
-        <div className={styles.heroButtons}>
-          <Link href="/gateaux" className={styles.primaryBtn}>
+      <div className={styles["hero-content"]}>
+        <h1 className={styles["hero-title"]}>Entremets pour vos Évènements</h1>
+        <div className={styles["hero-buttons"]}>
+          <Link href="/gateaux" className="btn btn-primary">
             Découvrir
           </Link>
-          <Link href="/contact" className={styles.secondaryBtn}>
+          <Link href="/contact" className="btn btn-secondary">
             Besoin d&apos;un renseignement ?
           </Link>
         </div>
