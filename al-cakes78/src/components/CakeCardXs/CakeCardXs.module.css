@@ -1,0 +1,66 @@
+/* === CAKE CARD === */
+
+.cake-card-xs-wrapper {
+  height: 100%;
+  padding: 18px 0;
+}
+
+/* Responsive : pour les petits écrans */
+@media (max-width: 590px) {
+  .cake-card-xs-wrapper {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .cake-card-xs-wrapper {
+    padding: 8px 0;
+  }
+}
+
+.cake-card-xs-link {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cake-card-xs-link:hover {
+  text-decoration: none;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cake-card-xs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--background);
+  padding: 20px 30px;
+  height: 100%;
+  gap: 20px;
+}
+
+/* === CAKE CARD IMAGE === */
+
+.cake-card-xs-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cake-card-xs-image {
+  transition: transform 1s ease-in-out;
+}
+.cake-card-xs-image:hover {
+  transform: rotate(360deg);
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

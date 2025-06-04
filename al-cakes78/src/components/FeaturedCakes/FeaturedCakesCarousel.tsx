@@ -6,7 +6,7 @@ import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import styles from "./EmblaCarousel.module.css";
-import CakeCard from "../CakeCard/CakeCard";
+import CakeCardXs from "../CakeCardXs/CakeCardXs";
 
 type Cake = {
   id: number;
@@ -53,13 +53,11 @@ const EmblaCarousel: React.FC<PropType> = ({ cakes, options }) => {
         <div className={styles["embla__container"]}>
           {cakes.map((cake) => (
             <div className={styles["embla__slide"]} key={cake.id}>
-              <CakeCard
+              <CakeCardXs
                 id={cake.id}
                 name={cake.name}
                 slug={cake.slug}
                 image={cake.image}
-                description={cake.description}
-                price={cake.price}
               />
             </div>
           ))}
