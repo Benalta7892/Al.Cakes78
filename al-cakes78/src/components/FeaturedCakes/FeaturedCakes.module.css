@@ -4,13 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 600px; */
-  gap: 2rem; /* ✅ ajoute un espace vertical entre les éléments */
-  height: auto;
+  gap: 0.8rem;
 }
 
-/* Responsive featured cakes section */
-
 .carousel-wrapper {
-  height: 100%;
+  width: 100%;
 }
