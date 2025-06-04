@@ -1,5 +1,12 @@
+/* === FEATURED CAKES SECTION === */
+
 .featured-cakes-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* height: 600px; */
+  gap: 2rem; /* ✅ ajoute un espace vertical entre les éléments */
+  height: auto;
 }
+
+/* Responsive featured cakes section */

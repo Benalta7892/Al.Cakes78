@@ -54,16 +54,12 @@
 
 .card-content h2 {
   flex: 1;
-  font-size: var(--fs-24);
-  color: var(--color-chocolate);
-  font-weight: bold;
   align-content: center;
   padding-left: 20px;
 }
 
 .card-content p {
   flex: 2;
-  color: var(--color-caramel);
   background-color: #fff;
   border-top-right-radius: 124px;
   border-bottom-right-radius: 124px;
@@ -82,7 +78,6 @@
 
   .card-content h2 {
     padding-left: 0;
-    margin-bottom: 14px;
   }
 
   .card-content p {
