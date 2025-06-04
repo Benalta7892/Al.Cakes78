@@ -10,3 +10,7 @@
 }
 
 /* Responsive featured cakes section */
+
+.carousel-wrapper {
+  height: 100%;
+}
