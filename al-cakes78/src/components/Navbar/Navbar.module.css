@@ -123,6 +123,7 @@
     padding: 15px 50px 15px 20px;
     background: var(--background);
     border-right: 2px solid var(--color-caramel);
+    border-bottom: 2px solid var(--color-caramel);
     transform: translateX(-100%);
     transition: transform var(--transition-base);
   }
