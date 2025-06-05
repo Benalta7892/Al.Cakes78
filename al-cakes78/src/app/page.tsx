@@ -2,6 +2,7 @@ import Hero from "@/components/Hero/Hero";
 import CardInfos from "@/components/CardInfos/CardInfos";
 import FeaturedCakes from "@/components/FeaturedCakes/FeaturedCakes";
 import Image from "next/image";
+import Testimonials from "@/components/Testimonials/Testimonials";
 
 export default function Home() {
   return (
@@ -26,6 +27,16 @@ export default function Home() {
       />
 
       <FeaturedCakes />
+
+      <Image
+        src="/images/vector.svg"
+        width={594}
+        height={100}
+        alt="Image de séparation"
+        className="vector-image"
+      />
+
+      <Testimonials />
 
       <Image
         src="/images/vector.svg"

@@ -208,7 +208,7 @@ p {
 /* Bordered Elements */
 .bordered {
   border: var(--border-width) var(--border-style) var(--border-color);
-  padding: 8px;
+  padding: 10px;
   height: 100%;
   width: 100%;
 }
