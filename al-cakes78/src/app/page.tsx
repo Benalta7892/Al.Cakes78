@@ -17,6 +17,7 @@ export default function Home() {
         alt="Image de séparation"
         className="vector-image vector-after-hero"
       />
+
       <CardInfos />
 
       <Image
