@@ -35,7 +35,14 @@
   justify-content: center;
   margin-top: 8px;
   width: 50%;
+  height: 50%;
   align-content: center;
+}
+
+.star-icon {
+  font-size: 40px;
+  color: #ffd43b;
+  margin-right: "4px";
 }
 
 .author-name {
