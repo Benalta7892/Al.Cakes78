@@ -14,11 +14,13 @@ type Props = {
 };
 
 const CakeCard = ({ name, slug, image, description, price }: Props) => {
+  const firstSentence = description.split(".")[0] + ".";
+
   return (
     <div className={styles["cake-card-wrapper"]}>
       <Link
         href={`/cakes/${slug}`}
-        className={`${styles["cake-card-link"]} bordered cursor-pointer hover:shadow-lg hover:scale-[1.01] transition duration-200`}>
+        className={`${styles["cake-card-link"]} bordered`}>
         <div className={`${styles["cake-card"]} bordered`}>
           <h3 className={styles["cake-card-title"]}>{name}</h3>
           <div className={styles["cake-card-image-wrapper"]}>
@@ -32,11 +34,10 @@ const CakeCard = ({ name, slug, image, description, price }: Props) => {
             />
           </div>
           <div className={styles["cake-card-content"]}>
-            <p className={styles["cake-card-description"]}>{description}</p>
+            <p className={styles["cake-card-description"]}>{firstSentence}</p>
             <p className={styles["cake-card-price"]}>
               À partir de {price.toFixed(2)} €
             </p>
-            {/* <button className={styles["cake-card-button"]}>Découvir</button> */}
           </div>
         </div>
       </Link>

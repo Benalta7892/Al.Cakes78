@@ -9,8 +9,15 @@ const page = () => {
   return (
     <>
       <IntroSection
-        title="Titre de la page des gâteaux"
-        description="Parcourez notre sélection complète de créations sucrées. Des recettes artisanales pour chaque occasion et chaque gourmandise."
+        title="Mes Entremets Faits Maison"
+        description={
+          <>
+            Mes <em>entremets faits maison</em> sont conçus pour vous offrir des
+            instants gourmands uniques. Des créations artisanales, soignées et
+            généreuses, pour sublimer toutes vos occasions – anniversaires,
+            fêtes, ou simples envies sucrées.
+          </>
+        }
       />
 
       <Image

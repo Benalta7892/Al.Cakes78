@@ -6,7 +6,15 @@
 }
 
 .cake-card-link {
+  text-decoration: none;
   display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cake-card-link:hover {
+  text-decoration: none;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cake-card {
@@ -14,9 +22,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--background);
+  background-color: white;
   padding: 10px;
   height: 100%;
+  gap: 20px;
+}
+/* === CAKE CARD IMAGE === */
+
+.cake-card-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cake-card-image {
+  transition: transform 1s ease-in-out;
+}
+.cake-card-image:hover {
+  transform: rotate(360deg);
 }
 
 /* === CAKE CARD CONTENT === */
@@ -28,7 +51,7 @@
   align-items: center;
   text-align: center;
   justify-content: flex-end;
-  gap: 30px;
+  gap: 10px;
 }
 
 /* === PRICE === */
@@ -36,4 +59,6 @@
 .cake-card-price {
   font-size: var(--fs-20);
   color: var(--color-chocolate);
+  /* background-color: white; */
+  /* text-shadow: 2px 4px 20px -2px #00000080; */
 }
