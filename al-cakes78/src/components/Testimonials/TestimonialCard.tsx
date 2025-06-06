@@ -22,13 +22,9 @@ const TestimonialCard = ({ testimonial }: Props) => {
           <FontAwesomeIcon
             key={i}
             icon={faStar}
-            // size="sm"
-            height={100}
-            width={400}
             style={{
               color: "#FFD43B",
               marginRight: "4px",
-              border: "1px solid red",
             }}
           />
         ))}
