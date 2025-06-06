@@ -15,7 +15,7 @@ const SLIDES = [
 
 const Hero = () => {
   return (
-    <section className={styles["hero"]}>
+    <section className={`${styles["hero"]} hero`}>
       <HeroCarousel slides={SLIDES} options={OPTIONS} />
       <div className={styles["hero-content"]}>
         <h1 className={styles["hero-title"]}>Entremets pour vos Évènements</h1>

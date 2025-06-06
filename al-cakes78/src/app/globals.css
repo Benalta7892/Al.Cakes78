@@ -117,6 +117,10 @@ section {
   width: 100%;
 }
 
+section:not(.hero) {
+  max-width: 980px;
+}
+
 /* === HEADINGS === */
 
 h2 {

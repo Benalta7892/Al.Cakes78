@@ -53,12 +53,14 @@ const EmblaCarousel: React.FC<PropType> = ({ cakes, options }) => {
         <div className={styles["embla__container"]}>
           {cakes.map((cake) => (
             <div className={styles["embla__slide"]} key={cake.id}>
-              <CakeCardXs
-                id={cake.id}
-                name={cake.name}
-                slug={cake.slug}
-                image={cake.image}
-              />
+              <article>
+                <CakeCardXs
+                  id={cake.id}
+                  name={cake.name}
+                  slug={cake.slug}
+                  image={cake.image}
+                />
+              </article>
             </div>
           ))}
         </div>
