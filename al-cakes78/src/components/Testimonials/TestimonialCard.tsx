@@ -23,7 +23,11 @@ const TestimonialCard = ({ testimonial }: Props) => {
             key={i}
             icon={faStar}
             size="sm"
-            style={{ color: "#FFD43B", marginRight: "4px" }}
+            style={{
+              color: "#FFD43B",
+              marginRight: "4px",
+              border: "1px solid red",
+            }}
           />
         ))}
       </div>
