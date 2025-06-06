@@ -2,7 +2,7 @@ import styles from "./IntroSection.module.css";
 
 type IntroSectionProps = {
   title: string;
-  description: string;
+  description: React.ReactNode;
 };
 
 const IntroSection = ({ title, description }: IntroSectionProps) => {
