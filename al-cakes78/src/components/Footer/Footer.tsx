@@ -24,13 +24,16 @@ const Footer = () => {
           />
         </Link>
       </div>
-      <Image
-        src="/images/Logo.svg"
-        width={264}
-        height={237}
-        alt="Logo"
-        className={styles["logo-footer"]}
-      />
+
+      <Link href="/" aria-label="Aller à la page d’accueil" aria-current="page">
+        <Image
+          src="/images/Logo.svg"
+          width={264}
+          height={237}
+          alt="Logo"
+          className={styles["logo-footer"]}
+        />
+      </Link>
 
       <p className={styles["rights"]}>
         📍Yvelines 78
