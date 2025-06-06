@@ -48,6 +48,14 @@ export default function Home() {
       />
 
       <ContactCTA />
+
+      <Image
+        src="/images/vector.svg"
+        width={594}
+        height={100}
+        alt="Image de séparation"
+        className="vector-image"
+      />
     </>
   );
 }
