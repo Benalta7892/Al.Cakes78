@@ -22,10 +22,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
           <FontAwesomeIcon
             key={i}
             icon={faStar}
-            style={{
-              color: "#FFD43B",
-              marginRight: "4px",
-            }}
+            className={styles["star-icon"]}
           />
         ))}
       </div>
