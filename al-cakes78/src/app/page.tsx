@@ -3,6 +3,7 @@ import CardInfos from "@/components/CardInfos/CardInfos";
 import FeaturedCakes from "@/components/FeaturedCakes/FeaturedCakes";
 import Image from "next/image";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
 
 export default function Home() {
   return (
@@ -45,6 +46,8 @@ export default function Home() {
         alt="Image de séparation"
         className="vector-image"
       />
+
+      <ContactCTA />
     </>
   );
 }
