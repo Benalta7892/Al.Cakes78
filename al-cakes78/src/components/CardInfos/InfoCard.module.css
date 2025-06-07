@@ -59,7 +59,7 @@
 
 .card-content p {
   flex: 2;
-  background-color: #fff;
+  background-color: var(--background);
   border-top-right-radius: 124px;
   border-bottom-right-radius: 124px;
   display: flex;

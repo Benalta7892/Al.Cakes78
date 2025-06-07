@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={styles["footer"]}>
+    <footer className={`${styles["footer"]} bordered`}>
       <div className={styles["social-media-container"]}>
         <Link href="https://www.instagram.com/">
           <Image
