@@ -117,7 +117,7 @@ section {
   width: 100%;
 }
 
-section:not(.hero) {
+section:not(.hero):not(.cakes-section) {
   max-width: 980px;
 }
 

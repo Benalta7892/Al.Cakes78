@@ -23,9 +23,9 @@
   align-items: center;
   justify-content: space-around;
   background-color: var(--background);
-  padding: 10px;
+  padding: 30px 10px;
   height: 100%;
-  gap: 20px;
+  gap: 50px;
 }
 /* === CAKE CARD IMAGE === */
 
@@ -51,7 +51,7 @@
   align-items: center;
   text-align: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 30px;
 }
 
 /* === PRICE === */
@@ -59,6 +59,5 @@
 .cake-card-price {
   font-size: var(--fs-20);
   color: var(--color-chocolate);
-  /* background-color: white; */
-  /* text-shadow: 2px 4px 20px -2px #00000080; */
+  /* padding: 20px 0; */
 }
