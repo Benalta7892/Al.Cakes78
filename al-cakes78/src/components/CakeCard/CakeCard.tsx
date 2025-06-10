@@ -19,7 +19,7 @@ const CakeCard = ({ name, slug, image, description, price }: Props) => {
   return (
     <div className={styles["cake-card-wrapper"]}>
       <Link
-        href={`/cakes/${slug}`}
+        href={`/gateaux/${slug}`}
         className={`${styles["cake-card-link"]} bordered`}>
         <div className={`${styles["cake-card"]} bordered`}>
           <h3 className={styles["cake-card-title"]}>{name}</h3>
