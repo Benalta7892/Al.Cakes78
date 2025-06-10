@@ -35,7 +35,7 @@
   justify-content: center;
   margin-top: 8px;
   width: 120px;
-  height: 50%;
+  height: fit-content;
   align-content: center;
 }
 
