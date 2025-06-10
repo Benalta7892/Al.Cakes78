@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={`${styles["footer"]}`}>
       <Image
-        src="/images/last-image.jpg"
+        src="/images/last-image.JPG"
         fill
         alt="Image représentant plusieurs gâteaux"
         className={styles["image-after-contact-cta"]}
