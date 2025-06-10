@@ -4,10 +4,13 @@ import CakesSection from "@/components/CakesSection/CakesSection";
 import IntroSection from "@/components/IntroSection/IntroSection";
 import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA/ContactCTA";
+import BackBtn from "@/components/BackBtn/BackBtn";
 
 const page = () => {
   return (
     <>
+      {/* <BackBtn content="Accueil" link="/" /> */}
+
       <IntroSection
         title="Mes Entremets Faits Maison"
         description={

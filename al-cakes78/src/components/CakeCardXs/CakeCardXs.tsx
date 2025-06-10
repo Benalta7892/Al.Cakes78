@@ -15,7 +15,7 @@ const CakeCardXs = ({ name, slug, image }: Props) => {
   return (
     <div className={styles["cake-card-xs-wrapper"]}>
       <Link
-        href={`/cakes/${slug}`}
+        href={`/gateaux/${slug}`}
         className={`${styles["cake-card-xs-link"]} bordered`}>
         <div className={`${styles["cake-card-xs"]} bordered`}>
           <div className={styles["cake-card-xs-image-wrapper"]}>
