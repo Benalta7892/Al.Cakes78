@@ -1,12 +1,20 @@
 .cake-details-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 500px;
-  padding: 20px;
   background-color: var(--background);
   gap: 20px;
+  /* transition: all 2s ease; */
+}
+
+/* Responsive: stack in column on smaller screens */
+@media (max-width: 690px) {
+  .cake-details-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 .display-container {
