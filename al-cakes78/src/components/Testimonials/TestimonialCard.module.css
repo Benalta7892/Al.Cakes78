@@ -45,7 +45,7 @@
   margin-right: "4px";
   stroke: var(--color-caramel);
   stroke-width: 20px;
-  filter: drop-shadow(2px 4px 20px rgba(0, 0, 0, 0.5));
+  /* filter: drop-shadow(2px 4px 20px rgba(0, 0, 0, 0.5)); */
 }
 
 .author-name {
