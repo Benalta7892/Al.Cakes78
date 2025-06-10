@@ -15,7 +15,7 @@ const Footer = () => {
       <div className={styles["social-media-container"]}>
         <Link href="https://www.instagram.com/">
           <Image
-            src="./images/insta.svg"
+            src="/images/insta.svg"
             height={44}
             width={44}
             alt="Logo Instagram"
@@ -24,7 +24,7 @@ const Footer = () => {
 
         <Link href="https://www.tiktok.com/">
           <Image
-            src="./images/tiktok.svg"
+            src="/images/tiktok.svg"
             height={44}
             width={44}
             alt="Logo Titkok"
