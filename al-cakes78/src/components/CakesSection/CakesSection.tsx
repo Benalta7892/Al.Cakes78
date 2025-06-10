@@ -6,7 +6,7 @@ import styles from "./CakesSection.module.css";
 
 const CakesSection = () => {
   return (
-    <section className={styles["cakes-section"]}>
+    <section className={`${styles["cakes-section"]} cakes-section`}>
       <div className={styles["cakes-section-grid"]}>
         {CAKES.map(({ id, name, slug, image, description, price }) => (
           <article key={id}>
