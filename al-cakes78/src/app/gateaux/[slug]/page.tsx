@@ -1,17 +1,30 @@
+import { Metadata } from "next";
 import BackBtn from "@/components/BackBtn/BackBtn";
 import CakeDetails from "@/components/CakeDetails/CakeDetails";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
-// type Props = {
-//   params: {
-//     slug: string;
-//   };
-// };
+interface PageParams {
+  params: {
+    slug: string;
+  };
+}
 
-const page = async (props: { params: { slug: string } }) => {
-  const decodedSlug = decodeURIComponent(props.params.slug);
-  const cake = CAKES.find((cake) => cake.slug === decodedSlug);
+export async function generateMetadata({
+  params,
+}: PageParams): Promise<Metadata> {
+  const cake = CAKES.find(
+    (cake) => cake.slug === decodeURIComponent(params.slug)
+  );
+  return {
+    title: cake ? cake.name : "Gâteau non trouvé",
+  };
+}
+
+export default async function Page({ params }: PageParams) {
+  const slug = decodeURIComponent(params.slug);
+  const cake = CAKES.find((cake) => cake.slug === slug);
+
   if (!cake) {
     return <p>Gâteau non trouvé</p>;
   }
@@ -39,5 +52,5 @@ const page = async (props: { params: { slug: string } }) => {
       />
     </>
   );
-};
+}
 export default page;
