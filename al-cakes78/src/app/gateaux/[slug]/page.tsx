@@ -9,7 +9,7 @@ import Image from "next/image";
 //   };
 // };
 
-const Page = async ({ params }: { params: { slug: string } }) => {
+const Page = ({ params }: { params: { slug: string } }) => {
   const decodedSlug = decodeURIComponent(params.slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
   if (!cake) {
