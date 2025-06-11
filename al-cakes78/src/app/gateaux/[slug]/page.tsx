@@ -21,7 +21,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: PageParams) {
+export default async function page({ params }: PageParams) {
   const slug = decodeURIComponent(params.slug);
   const cake = CAKES.find((cake) => cake.slug === slug);
 
@@ -53,4 +53,3 @@ export default async function Page({ params }: PageParams) {
     </>
   );
 }
-export default page;
