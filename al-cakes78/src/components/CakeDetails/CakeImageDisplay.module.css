@@ -97,6 +97,7 @@
 .thumb-slide {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 0;
   border: 2px solid var(--color-caramel);
 
