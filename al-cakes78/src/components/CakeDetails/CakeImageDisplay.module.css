@@ -103,7 +103,7 @@
   opacity: 0.6;
 }
 
-:global(.swiper-slide-thumb-active) {
+.cake-thumb-swiper :global(.swiper-slide-thumb-active) {
   background: var(--background);
   border: 2px solid var(--color-caramel);
   opacity: 1;
