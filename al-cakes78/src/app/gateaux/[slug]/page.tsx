@@ -20,7 +20,7 @@ import Image from "next/image";
 
 type Props = {
   params: {
-    slug: Promise<{ slug: string }>;
+    slug: string;
   };
 };
 
