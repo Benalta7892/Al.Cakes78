@@ -1,23 +1,10 @@
-// import { Metadata } from "next";
 import BackBtn from "@/components/BackBtn/BackBtn";
 import CakeDetails from "@/components/CakeDetails/CakeDetails";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
-// type PageParams = {
-//   params: Promise<{ slug: string }>; // ← ici la magie
-// };
-
-// export async function generateMetadata({
-//   params,
-// }: PageParams): Promise<Metadata> {
-//   const { slug } = await params;
-//   const cake = CAKES.find((cake) => cake.slug === decodeURIComponent(slug));
-//   return {
-//     title: cake ? cake.name : "Gâteau non trouvé",
-//   };
-// }
-
+// Depuis Next.js 15.3, le paramètre `params` est devenu une PROMESSE (async).
+// Si on ne fait pas "await", ça plante au build !
 type Props = {
   params: Promise<{
     slug: string;
@@ -25,6 +12,8 @@ type Props = {
 };
 
 export default async function Page(props: Props) {
+  // Faut faire `await props.params`
+  // Sinon, Vercel plante au build avec une erreur
   const params = await props.params;
   const cake = CAKES.find(
     (cake) => cake.slug === decodeURIComponent(params.slug)
@@ -37,6 +26,7 @@ export default async function Page(props: Props) {
   return (
     <>
       <BackBtn content="Tous les entremets" link="/gateaux" />
+
       <Image
         src="/images/vector.svg"
         width={594}
@@ -44,7 +34,9 @@ export default async function Page(props: Props) {
         alt="Image de séparation"
         className="vector-image"
       />
+
       <CakeDetails name={cake.name} images={cake.images} />
+
       <Image
         src="/images/vector.svg"
         width={594}
