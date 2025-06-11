@@ -19,12 +19,13 @@ import Image from "next/image";
 // }
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const cake = CAKES.find(
     (cake) => cake.slug === decodeURIComponent(params.slug)
   );
