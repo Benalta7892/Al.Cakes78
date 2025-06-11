@@ -9,14 +9,9 @@ import Image from "next/image";
 //   };
 // };
 
-const Page = async ({
-  params,
-}: {
-  params: { slug: string }; // <--- ça c’est suffisant
-}) => {
-  const decodedSlug = decodeURIComponent(params.slug);
+const page = async (props: { params: { slug: string } }) => {
+  const decodedSlug = decodeURIComponent(props.params.slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
-
   if (!cake) {
     return <p>Gâteau non trouvé</p>;
   }
@@ -45,4 +40,4 @@ const Page = async ({
     </>
   );
 };
-export default Page;
+export default page;
