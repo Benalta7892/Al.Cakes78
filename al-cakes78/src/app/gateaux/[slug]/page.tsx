@@ -10,8 +10,7 @@ import Image from "next/image";
 // };
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
-  const decodedSlug = decodeURIComponent(slug);
+  const decodedSlug = decodeURIComponent(params.slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
   if (!cake) {
     return <p>Gâteau non trouvé</p>;
