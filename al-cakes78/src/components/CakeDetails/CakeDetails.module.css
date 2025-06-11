@@ -1,3 +1,5 @@
+/* === CAKE DETAILS SECTION === */
+
 .cake-details-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,7 +9,7 @@
   height: 550px;
 }
 
-/* Responsive: stack in column on smaller screens */
+/* Responsive cake details section */
 @media (max-width: 690px) {
   .cake-details-section {
     grid-template-columns: 1fr;
