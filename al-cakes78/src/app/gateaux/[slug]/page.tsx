@@ -1,8 +1,22 @@
 import BackBtn from "@/components/BackBtn/BackBtn";
 import CakeDetails from "@/components/CakeDetails/CakeDetails";
+import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
-const page = () => {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+const page = async ({ params }: Props) => {
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
+  const cake = CAKES.find((cake) => cake.slug === decodedSlug);
+  if (!cake) {
+    return <p>Gâteau non trouvé</p>;
+  }
+
   return (
     <>
       <BackBtn content="Tous les entremets" link="/gateaux" />
@@ -15,7 +29,7 @@ const page = () => {
         className="vector-image"
       />
 
-      <CakeDetails />
+      <CakeDetails name={cake.name} images={cake.images} />
 
       <Image
         src="/images/vector.svg"

@@ -8,12 +8,12 @@ type Props = {
   id: number;
   name: string;
   slug: string;
-  image: string;
+  images: string[];
   description: string;
   price: number;
 };
 
-const CakeCard = ({ name, slug, image, description, price }: Props) => {
+const CakeCard = ({ name, slug, images, description, price }: Props) => {
   const firstSentence = description.split(".")[0] + ".";
 
   return (
@@ -26,7 +26,7 @@ const CakeCard = ({ name, slug, image, description, price }: Props) => {
           <div className={styles["cake-card-image-wrapper"]}>
             <Image
               className={styles["cake-card-image"]}
-              src={image}
+              src={images[0]}
               alt={name}
               height={280}
               width={280}

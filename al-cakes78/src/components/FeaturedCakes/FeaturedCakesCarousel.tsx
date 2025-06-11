@@ -12,9 +12,9 @@ type Cake = {
   id: number;
   name: string;
   slug: string;
-  image: string;
-  description: string;
-  price: number;
+  images: string[];
+  // description: string;
+  // price: number;
   isFeatured: boolean;
 };
 
@@ -58,7 +58,7 @@ const EmblaCarousel: React.FC<PropType> = ({ cakes, options }) => {
                   id={cake.id}
                   name={cake.name}
                   slug={cake.slug}
-                  image={cake.image}
+                  images={cake.images}
                 />
               </article>
             </div>

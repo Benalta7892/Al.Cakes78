@@ -8,13 +8,13 @@ const CakesSection = () => {
   return (
     <section className={`${styles["cakes-section"]} cakes-section`}>
       <div className={styles["cakes-section-grid"]}>
-        {CAKES.map(({ id, name, slug, image, description, price }) => (
+        {CAKES.map(({ id, name, slug, images, description, price }) => (
           <article key={id}>
             <CakeCard
               id={id}
               name={name}
               slug={slug}
-              image={image}
+              images={images}
               description={description}
               price={price}
             />
