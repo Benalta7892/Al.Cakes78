@@ -1,4 +1,6 @@
-export const CAKES = [
+import type { Cake } from "@/types/cake";
+
+export const CAKES: Cake[] = [
   {
     id: 1,
     name: "Dahlia",
@@ -11,6 +13,19 @@ export const CAKES = [
     ],
     description:
       "Un délicieux gâteau au chocolat riche et moelleux. Parfait pour les amateurs de chocolat ! N'oubliez pas de l'accompagner d'une boule de glace à la vanille.",
+    ingredients: [
+      "Génoise à la vanille",
+      "Mousse légère aux fruits rouges",
+      "Glaçage miroir",
+      "Décor en chocolat blanc",
+      "Fruits frais",
+      "Fleurs comestibles",
+    ],
+    molds: [
+      { size: "6-8 Parts", price: 25 },
+      { size: "8-10 Parts", price: 30 },
+      { size: "10-12 Parts", price: 35 },
+    ],
     price: 25.0,
     isFeatured: true,
   },
@@ -26,6 +41,19 @@ export const CAKES = [
     ],
     description:
       "Un gâteau à la vanille léger et savoureux. Idéal pour les célébrations ! Accompagné d'un glaçage crémeux, il ravira vos invités.",
+    ingredients: [
+      "Génoise à la vanille",
+      "Crème au beurre à la vanille",
+      "Décor en chocolat blanc",
+      "Fruits frais",
+      "Fleurs comestibles",
+      "Pépites de chocolat",
+    ],
+    molds: [
+      { size: "6-8 Parts", price: 20 },
+      { size: "8-10 Parts", price: 25 },
+      { size: "10-12 Parts", price: 30 },
+    ],
     price: 20.0,
     isFeatured: true,
   },
@@ -41,6 +69,19 @@ export const CAKES = [
     ],
     description:
       "Un gâteau frais garni de fruits de saison. Un délice estival ! Avec sa texture légère et ses saveurs fruitées, il est parfait pour les journées chaudes.",
+    ingredients: [
+      "Génoise légère",
+      "Crème chantilly",
+      "Fruits de saison",
+      "Glaçage au chocolat blanc",
+      "Fleurs comestibles",
+      "Pépites de chocolat",
+    ],
+    molds: [
+      { size: "6-8 Parts", price: 22 },
+      { size: "8-10 Parts", price: 27 },
+      { size: "10-12 Parts", price: 32 },
+    ],
     price: 30.0,
     isFeatured: true,
   },
@@ -56,6 +97,18 @@ export const CAKES = [
     ],
     description:
       "Un gâteau Red Velvet avec un glaçage crémeux. Un classique américain ! Sa couleur rouge vif et son goût unique en font un choix populaire pour les anniversaires et les occasions spéciales.",
+    ingredients: [
+      "Génoise Red Velvet",
+      "Crème au fromage",
+      "Glaçage au chocolat blanc",
+      "Fruits frais",
+      "Fleurs comestibles",
+    ],
+    molds: [
+      { size: "6-8 Parts", price: 28 },
+      { size: "8-10 Parts", price: 33 },
+      { size: "10-12 Parts", price: 38 },
+    ],
     price: 28.0,
     isFeatured: true,
   },
@@ -71,6 +124,18 @@ export const CAKES = [
     ],
     description:
       "Un gâteau au citron acidulé et rafraîchissant. Parfait pour les amateurs de saveurs citronnées ! Avec son glaçage au citron, il apporte une touche de fraîcheur à vos repas.",
+    ingredients: [
+      "Génoise Red Velvet",
+      "Crème au fromage",
+      "Glaçage au chocolat blanc",
+      "Fruits frais",
+      "Fleurs comestibles",
+    ],
+    molds: [
+      { size: "6-8 Parts", price: 22 },
+      { size: "8-10 Parts", price: 27 },
+      { size: "10-12 Parts", price: 32 },
+    ],
     price: 22.0,
     isFeatured: true,
   },

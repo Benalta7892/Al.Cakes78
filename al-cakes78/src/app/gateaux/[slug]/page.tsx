@@ -35,7 +35,7 @@ export default async function Page(props: Props) {
         className="vector-image"
       />
 
-      <CakeDetails name={cake.name} images={cake.images} />
+      <CakeDetails cake={cake} />
 
       <Image
         src="/images/vector.svg"

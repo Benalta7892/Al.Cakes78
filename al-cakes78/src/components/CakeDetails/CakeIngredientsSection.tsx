@@ -1,8 +1,8 @@
-type CakeIngredientsProps = {
+type Props = {
   ingredients: string[];
 };
 
-const CakeIngredients = ({ ingredients }: CakeIngredientsProps) => {
+const CakeIngredients = ({ ingredients }: Props) => {
   return (
     <section>
       <h3>Ingrédients</h3>

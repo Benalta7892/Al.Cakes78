@@ -4,7 +4,17 @@ import IntroSection from "@/components/IntroSection/IntroSection";
 import CakeIngredientsSection from "./CakeIngredientsSection";
 import CakeMoldsSection from "./CakeMoldsSection";
 
-const CakeInfosDisplay = () => {
+type Props = {
+  name: string;
+  description: string;
+  ingredients: string[];
+  molds: {
+    size: string;
+    price: number;
+  }[];
+};
+
+const CakeInfosDisplay = ({ name, description, ingredients, molds }: Props) => {
   return (
     <div className={`${styles["display-container"]} bordered`}>
       <div className={`${styles["display-wrapper"]} bordered`}>
@@ -21,33 +31,13 @@ const CakeInfosDisplay = () => {
 
         {/* Titre h2 */}
         {/* Description */}
-        <IntroSection
-          title="Dalia, le Gâteau Fruité"
-          description={
-            <>
-              Dalia est un entremets fruité, léger et gourmand. Sa génoise à la
-              vanille est garnie d&apos;une mousse légère aux fruits rouges, le
-              tout recouvert d&apos;un glaçage miroir. Décoré avec des fruits
-              frais et des fleurs comestibles, il est parfait pour toutes les
-              occasions.
-            </>
-          }
-        />
+        <IntroSection title={name} description={description} />
 
         {/* Ingrédients avec un titre et une liste */}
-        <CakeIngredientsSection
-          ingredients={[
-            "Génoise à la vanille",
-            "Mousse légère aux fruits rouges",
-            "Glaçage miroir",
-            "Décor en chocolat blanc",
-            "Fruits frais",
-            "Fleurs comestibles",
-          ]}
-        />
+        <CakeIngredientsSection ingredients={ingredients} />
 
         {/* Moules disponible (taille et prix) avec un titre et un tableau */}
-        <CakeMoldsSection />
+        <CakeMoldsSection molds={molds} />
       </div>
     </div>
   );

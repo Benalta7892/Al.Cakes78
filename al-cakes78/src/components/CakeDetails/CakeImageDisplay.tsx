@@ -11,11 +11,11 @@ import "swiper/css/thumbs";
 import styles from "./CakeImageDisplay.module.css";
 
 type Props = {
-  images: string[];
   name: string;
+  images: string[];
 };
 
-const CakeImageDisplay = ({ images, name }: Props) => {
+const CakeImageDisplay = ({ name, images }: Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
@@ -29,7 +29,7 @@ const CakeImageDisplay = ({ images, name }: Props) => {
         spaceBetween={20}
         thumbs={{ swiper: thumbsSwiper }}
         className={`${styles["cake-image-swiper"]} bordered`}>
-        {images.map((src, index) => (
+        {images.map((src: string, index: number) => (
           <SwiperSlide key={index} className={styles["swiper-slide"]}>
             {/* <div className={styles["image-container"]}> */}
             <Image
@@ -53,7 +53,7 @@ const CakeImageDisplay = ({ images, name }: Props) => {
         watchSlidesProgress
         modules={[Thumbs]}
         className={styles["cake-thumb-swiper"]}>
-        {images.map((src, index) => (
+        {images.map((src: string, index: number) => (
           <SwiperSlide
             key={index}
             className={`${styles["thumb-slide"]} bordered`}>
