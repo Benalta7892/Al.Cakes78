@@ -1,6 +1,3 @@
-"use client";
-import * as React from "react";
-
 // import { Metadata } from "next";
 import BackBtn from "@/components/BackBtn/BackBtn";
 import CakeDetails from "@/components/CakeDetails/CakeDetails";
@@ -21,14 +18,10 @@ import Image from "next/image";
 //   };
 // }
 
-// type Props = {
-//   params: {
-//     slug: string;
-//   };
-// };
+type Props = Promise<{ slug: string }>;
 
-export default function Page({ params }) {
-  const { slug } = React.use(params);
+export default async function Page({ params }): Props {
+  const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
 
