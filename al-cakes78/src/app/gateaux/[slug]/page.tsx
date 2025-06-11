@@ -25,9 +25,8 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-  const cake = CAKES.find(
-    (cake) => cake.slug === decodeURIComponent(params.slug)
-  );
+  const decodedSlug = decodeURIComponent(params.slug);
+  const cake = CAKES.find((cake) => cake.slug === decodedSlug);
 
   if (!cake) {
     return <p>Gâteau non trouvé</p>;
