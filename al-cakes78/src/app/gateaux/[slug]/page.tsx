@@ -20,12 +20,13 @@ import Image from "next/image";
 
 type Props = {
   params: {
-    slug: string;
+    slug: Promise<{ slug: string }>;
   };
 };
 
 export default async function Page({ params }: Props) {
-  const decodedSlug = decodeURIComponent(params.slug);
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
 
   if (!cake) {
