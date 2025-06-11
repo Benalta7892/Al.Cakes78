@@ -2,10 +2,15 @@ import styles from "./CakeDetails.module.css";
 import CakeImageDisplay from "./CakeImageDisplay";
 import CakeInfosDisplay from "./CakeInfosDisplay";
 
-const CakeDetails = () => {
+type Props = {
+  name: string;
+  images: string[];
+};
+
+const CakeDetails = ({ name, images }: Props) => {
   return (
     <section className={styles["cake-details-section"]}>
-      <CakeImageDisplay />
+      <CakeImageDisplay name={name} images={images} />
       <CakeInfosDisplay />
     </section>
   );

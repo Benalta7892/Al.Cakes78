@@ -8,10 +8,10 @@ type Props = {
   id: number;
   name: string;
   slug: string;
-  image: string;
+  images: string[];
 };
 
-const CakeCardXs = ({ name, slug, image }: Props) => {
+const CakeCardXs = ({ name, slug, images }: Props) => {
   return (
     <div className={styles["cake-card-xs-wrapper"]}>
       <Link
@@ -21,7 +21,7 @@ const CakeCardXs = ({ name, slug, image }: Props) => {
           <div className={styles["cake-card-xs-image-wrapper"]}>
             <Image
               className={styles["cake-card-xs-image"]}
-              src={image}
+              src={images[0]}
               alt={name}
               height={280}
               width={280}

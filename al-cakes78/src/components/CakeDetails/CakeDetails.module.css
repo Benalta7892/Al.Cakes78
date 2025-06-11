@@ -1,30 +1,16 @@
 .cake-details-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  height: 500px;
-  padding: 20px;
-  background-color: var(--background);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+  height: 550px;
 }
 
-.display-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--background);
-}
-
-.display-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--background);
+/* Responsive: stack in column on smaller screens */
+@media (max-width: 690px) {
+  .cake-details-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 }
