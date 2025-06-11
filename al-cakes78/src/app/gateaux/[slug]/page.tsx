@@ -4,24 +4,22 @@ import CakeDetails from "@/components/CakeDetails/CakeDetails";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
-interface PageParams {
+type PageParams = {
   params: {
     slug: string;
   };
-}
+};
 
-export async function generateMetadata({
-  params,
-}: PageParams): Promise<Metadata> {
-  const cake = CAKES.find(
-    (cake) => cake.slug === decodeURIComponent(params.slug)
-  );
+export function generateMetadata({ params }: PageParams): Metadata {
+  const slug = decodeURIComponent(params.slug);
+  const cake = CAKES.find((cake) => cake.slug === slug);
+
   return {
     title: cake ? cake.name : "Gâteau non trouvé",
   };
 }
 
-export default async function page({ params }: PageParams) {
+export default function Page({ params }: PageParams) {
   const slug = decodeURIComponent(params.slug);
   const cake = CAKES.find((cake) => cake.slug === slug);
 
@@ -32,7 +30,6 @@ export default async function page({ params }: PageParams) {
   return (
     <>
       <BackBtn content="Tous les entremets" link="/gateaux" />
-
       <Image
         src="/images/vector.svg"
         width={594}
@@ -40,9 +37,7 @@ export default async function page({ params }: PageParams) {
         alt="Image de séparation"
         className="vector-image"
       />
-
       <CakeDetails name={cake.name} images={cake.images} />
-
       <Image
         src="/images/vector.svg"
         width={594}
