@@ -5,23 +5,22 @@ import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
 type PageParams = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>; // ← ici la magie
 };
 
-export function generateMetadata({ params }: PageParams): Metadata {
-  const slug = decodeURIComponent(params.slug);
-  const cake = CAKES.find((cake) => cake.slug === slug);
-
+export async function generateMetadata({
+  params,
+}: PageParams): Promise<Metadata> {
+  const { slug } = await params;
+  const cake = CAKES.find((cake) => cake.slug === decodeURIComponent(slug));
   return {
     title: cake ? cake.name : "Gâteau non trouvé",
   };
 }
 
-export default function Page({ params }: PageParams) {
-  const slug = decodeURIComponent(params.slug);
-  const cake = CAKES.find((cake) => cake.slug === slug);
+export default async function Page({ params }: PageParams) {
+  const { slug } = await params;
+  const cake = CAKES.find((cake) => cake.slug === decodeURIComponent(slug));
 
   if (!cake) {
     return <p>Gâteau non trouvé</p>;
