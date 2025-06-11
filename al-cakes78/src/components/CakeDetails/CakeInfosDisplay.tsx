@@ -35,7 +35,16 @@ const CakeInfosDisplay = () => {
         />
 
         {/* Ingrédients avec un titre et une liste */}
-        <CakeIngredientsSection />
+        <CakeIngredientsSection
+          ingredients={[
+            "Génoise à la vanille",
+            "Mousse légère aux fruits rouges",
+            "Glaçage miroir",
+            "Décor en chocolat blanc",
+            "Fruits frais",
+            "Fleurs comestibles",
+          ]}
+        />
 
         {/* Moules disponible (taille et prix) avec un titre et un tableau */}
         <CakeMoldsSection />

@@ -1,14 +1,15 @@
-const CakeIngredients = () => {
+type CakeIngredientsProps = {
+  ingredients: string[];
+};
+
+const CakeIngredients = ({ ingredients }: CakeIngredientsProps) => {
   return (
     <section>
       <h3>Ingrédients</h3>
       <ul>
-        <li>Génoise à la vanille</li>
-        <li>Mousse légère aux fruits rouges</li>
-        <li>Glaçage miroir</li>
-        <li>Décor en chocolat blanc</li>
-        <li>Fruits frais</li>
-        <li>Fleurs comestibles</li>
+        {ingredients.map((ingredient, index) => (
+          <li key={index}>{ingredient}</li>
+        ))}
       </ul>
     </section>
   );
