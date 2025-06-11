@@ -80,12 +80,12 @@
 .swiper-slide {
   display: flex;
   height: 100%;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
 }
 
 .cake-image-slide {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .cake-thumb-swiper {
@@ -112,4 +112,8 @@
   border: 2px solid var(--color-caramel);
   opacity: 1;
   transition: border 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.cake-image-thumb-slide {
+  object-fit: contain;
 }
