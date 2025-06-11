@@ -1,5 +1,6 @@
-import BackBtn from "@/components/BackBtn/BackBtn";
+// import BackBtn from "@/components/BackBtn/BackBtn";
 import CakeDetails from "@/components/CakeDetails/CakeDetails";
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
@@ -25,7 +26,7 @@ export default async function Page(props: Props) {
 
   return (
     <>
-      <BackBtn content="Tous les entremets" link="/gateaux" />
+      {/* <BackBtn content="Tous les entremets" link="/gateaux" /> */}
 
       <Image
         src="/images/vector.svg"
@@ -36,6 +37,16 @@ export default async function Page(props: Props) {
       />
 
       <CakeDetails cake={cake} />
+
+      <Image
+        src="/images/vector.svg"
+        width={594}
+        height={100}
+        alt="Image de séparation"
+        className="vector-image"
+      />
+
+      <ContactCTA />
 
       <Image
         src="/images/vector.svg"

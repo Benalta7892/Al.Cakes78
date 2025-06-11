@@ -1,0 +1,25 @@
+.cake-ingredients-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.title-ingredients-section {
+  margin-bottom: 20px;
+  color: var(--color-chocolate);
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  color: var(--color-caramel);
+}
+
+.ingredient-item span {
+  color: var(--color-chocolate);
+}
