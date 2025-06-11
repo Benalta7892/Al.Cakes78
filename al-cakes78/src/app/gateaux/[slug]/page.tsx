@@ -3,13 +3,13 @@ import CakeDetails from "@/components/CakeDetails/CakeDetails";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+// type Props = {
+//   params: {
+//     slug: string;
+//   };
+// };
 
-const Page = async ({ params }: Props) => {
+const Page = async ({ params }: { params: { slug: string } }) => {
   const decodedSlug = decodeURIComponent(params.slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
   if (!cake) {
