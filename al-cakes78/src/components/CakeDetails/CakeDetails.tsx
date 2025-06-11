@@ -1,17 +1,22 @@
+import { CAKES } from "@/data/cakes";
 import styles from "./CakeDetails.module.css";
 import CakeImageDisplay from "./CakeImageDisplay";
 import CakeInfosDisplay from "./CakeInfosDisplay";
 
 type Props = {
-  name: string;
-  images: string[];
+  cake: (typeof CAKES)[number];
 };
 
-const CakeDetails = ({ name, images }: Props) => {
+const CakeDetails = ({ cake }: Props) => {
   return (
     <section className={styles["cake-details-section"]}>
-      <CakeImageDisplay name={name} images={images} />
-      <CakeInfosDisplay />
+      <CakeImageDisplay name={cake.name} images={cake.images} />
+      <CakeInfosDisplay
+        name={cake.name}
+        description={cake.description}
+        ingredients={cake.ingredients}
+        molds={cake.molds}
+      />
     </section>
   );
 };

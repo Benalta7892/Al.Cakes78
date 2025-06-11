@@ -1,29 +1,22 @@
+import { Mold } from "@/types/cake";
 import styles from "./CakeMoldsSection.module.css";
 
-const CakeMolds = () => {
+type Props = {
+  molds: Mold[];
+};
+
+const CakeMolds = ({ molds }: Props) => {
   return (
     <section className={styles["molds-section"]}>
       <h3>Moules Disponibles</h3>
       <table className={styles["molds-table"]}>
-        {/* <thead>
-              <tr>
-                <th>Taille</th>
-                <th>Prix</th>
-              </tr>
-            </thead> */}
         <tbody>
-          <tr>
-            <td>6-8 Parts</td>
-            <td>25 €</td>
-          </tr>
-          <tr>
-            <td>8-10 Parts</td>
-            <td>30 €</td>
-          </tr>
-          <tr>
-            <td>10-12 Parts</td>
-            <td>35 €</td>
-          </tr>
+          {molds.map((mold, index) => (
+            <tr key={index}>
+              <td>{mold.size}</td>
+              <td>{mold.price} €</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>
