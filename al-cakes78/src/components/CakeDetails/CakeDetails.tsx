@@ -10,7 +10,10 @@ type Props = {
 const CakeDetails = ({ cake }: Props) => {
   return (
     <section className={styles["cake-details-section"]}>
+      {/* Afficher les images du gateaux */}
       <CakeImageDisplay name={cake.name} images={cake.images} />
+
+      {/* Afficher les informations du gateaux */}
       <CakeInfosDisplay
         name={cake.name}
         description={cake.description}
