@@ -6,7 +6,7 @@ import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA/ContactCTA";
 // import BackBtn from "@/components/BackBtn/BackBtn";
 
-const Page = () => {
+const page = () => {
   return (
     <>
       {/* <BackBtn content="Accueil" link="/" /> */}
@@ -53,4 +53,4 @@ const Page = () => {
     </>
   );
 };
-export default Page;
+export default page;
