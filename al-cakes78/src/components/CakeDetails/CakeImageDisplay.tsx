@@ -62,6 +62,7 @@ const CakeImageDisplay = ({ images, name }: Props) => {
               alt={`Miniature ${index + 1}`}
               width={100}
               height={100}
+              className={styles["cake-image-thumb-slide"]}
             />
           </SwiperSlide>
         ))}
