@@ -1,26 +1,33 @@
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import BackBtn from "@/components/BackBtn/BackBtn";
 import CakeDetails from "@/components/CakeDetails/CakeDetails";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 
-type PageParams = {
-  params: Promise<{ slug: string }>; // ← ici la magie
+// type PageParams = {
+//   params: Promise<{ slug: string }>; // ← ici la magie
+// };
+
+// export async function generateMetadata({
+//   params,
+// }: PageParams): Promise<Metadata> {
+//   const { slug } = await params;
+//   const cake = CAKES.find((cake) => cake.slug === decodeURIComponent(slug));
+//   return {
+//     title: cake ? cake.name : "Gâteau non trouvé",
+//   };
+// }
+
+type Props = {
+  params: {
+    slug: string;
+  };
 };
 
-export async function generateMetadata({
-  params,
-}: PageParams): Promise<Metadata> {
-  const { slug } = await params;
-  const cake = CAKES.find((cake) => cake.slug === decodeURIComponent(slug));
-  return {
-    title: cake ? cake.name : "Gâteau non trouvé",
-  };
-}
-
-export default async function Page({ params }: PageParams) {
-  const { slug } = await params;
-  const cake = CAKES.find((cake) => cake.slug === decodeURIComponent(slug));
+export default async function Page({ params }: Props) {
+  const cake = CAKES.find(
+    (cake) => cake.slug === decodeURIComponent(params.slug)
+  );
 
   if (!cake) {
     return <p>Gâteau non trouvé</p>;
