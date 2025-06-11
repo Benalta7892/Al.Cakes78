@@ -10,7 +10,7 @@ type Props = {
 };
 
 const page = async ({ params }: Props) => {
-  const { slug } = await params;
+  const { slug } = params;
   const decodedSlug = decodeURIComponent(slug);
   const cake = CAKES.find((cake) => cake.slug === decodedSlug);
   if (!cake) {
