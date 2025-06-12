@@ -3,11 +3,10 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .title-ingredients-section {
-  margin-bottom: 20px;
   color: var(--color-chocolate);
 }
 
@@ -17,9 +16,11 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
-  color: var(--color-caramel);
+  color: var(--color-chocolate);
 }
 
-.ingredient-item span {
-  color: var(--color-chocolate);
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

@@ -1,0 +1,32 @@
+.molds-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.molds-table {
+  width: 100%;
+}
+
+.mold-row {
+  display: flex;
+  border-bottom: 1px dotted var(--color-chocolate);
+  padding: 4px 10px;
+}
+
+.mold-size {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mold-price {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-chocolate);
+}
