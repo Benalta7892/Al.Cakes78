@@ -1,3 +1,5 @@
+/* === INGREDIENTS SECTION === */
+
 .cake-ingredients-section {
   display: flex;
   flex-direction: column;
@@ -5,10 +7,6 @@
   width: 100%;
   margin-bottom: 30px;
 }
-
-/* .title-ingredients-section {
-  color: var(--color-chocolate);
-} */
 
 .ingredients-list {
   display: flex;
