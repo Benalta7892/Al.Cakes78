@@ -12,9 +12,9 @@ const CakeMolds = ({ molds }: Props) => {
       <table className={styles["molds-table"]}>
         <tbody>
           {molds.map((mold, index) => (
-            <tr key={index}>
-              <td>{mold.size}</td>
-              <td>{mold.price} €</td>
+            <tr key={index} className={styles["mold-row"]}>
+              <td className={styles["mold-size"]}>{mold.size}</td>
+              <td className={styles["mold-price"]}>{mold.price} €</td>
             </tr>
           ))}
         </tbody>
