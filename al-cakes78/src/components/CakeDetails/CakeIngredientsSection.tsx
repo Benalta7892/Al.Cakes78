@@ -19,7 +19,7 @@ const CakeIngredients = ({ ingredients }: Props) => {
               height={10}
               className={styles["list-bullet"]}
             />
-            {ingredient}
+            <p>{ingredient}</p>
           </li>
         ))}
       </ul>

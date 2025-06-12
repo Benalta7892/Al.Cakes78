@@ -1,0 +1,133 @@
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  /* background-color: var(--background); */
+}
+
+.service-image {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+}
+
+.service-image1 {
+  display: block;
+  margin: 0 auto;
+  /* margin-bottom: -10px; */
+  /* top: 0; */
+  /* left: 0; */
+  /* rotate: 90deg; */
+  /* width: 40%; */
+  /* height: 60%; */
+  max-width: 498px;
+  transform: rotate(90deg) translateY(0) translateX(50%);
+}
+.service-image2 {
+  display: block;
+  margin: 0 auto;
+  /* transform: translateY(0); */
+  /* margin-top: -10px; */
+  /* bottom: 0; */
+  /* right: 0; */
+  rotate: 90deg;
+  /* width: 40%; */
+  /* height: 60%; */
+  max-width: 498px;
+  transform: rotate(90deg) translateY(0) translateX(-50%);
+}
+
+.services-container {
+  background-color: white;
+  max-width: 500px;
+  z-index: 1;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background);
+  /* padding: 30px 10px; */
+}
+
+.services-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  gap: 10px;
+}
+
+.services-logo {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.services-logo-image {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.services-title {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.services-content p {
+  margin-bottom: 30px;
+}
+
+.delivery-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 20px;
+}
+
+.delivery-row {
+  display: flex;
+  border-bottom: 1px dotted var(--color-chocolate);
+  padding: 4px 10px;
+  width: 100%;
+}
+
+.delivery-size {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.delivery-price {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-chocolate);
+}
