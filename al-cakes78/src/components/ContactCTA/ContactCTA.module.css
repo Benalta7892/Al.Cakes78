@@ -30,6 +30,12 @@
   box-shadow: 2px 4px 20px -2px #00000080;
 }
 
+/* === HEADING === */
+
+.contact-cta-title {
+  text-decoration: none;
+}
+
 /* Responsive Design */
 @media (max-width: 690px) {
   .contact-cta-section {
