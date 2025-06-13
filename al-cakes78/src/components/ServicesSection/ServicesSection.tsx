@@ -12,7 +12,6 @@ const ServicesSection = () => {
           alt="Image de service"
           className={`${styles["service-image"]} ${styles["service-image1"]}`}
         /> */}
-
         <div className={`${styles["services-container"]} bordered`}>
           <div className={`${styles["services-content"]} bordered`}>
             <div className={styles["services-header"]}>
@@ -40,7 +39,11 @@ const ServicesSection = () => {
               de ce délai ne sont pas prises en charge. Toute commande est
               acceptée sous réserve de disponibilité.
             </p>
+          </div>
+        </div>
 
+        <div className={`${styles["services-container"]} bordered`}>
+          <div className={`${styles["services-content"]} bordered`}>
             <div className={styles["services-header"]}>
               <div className={styles["services-logo"]}>
                 <Image
@@ -64,7 +67,11 @@ const ServicesSection = () => {
               prépare des gâteaux maison sur commande, livrés partout en
               Île-de-France.
             </p>
+          </div>
+        </div>
 
+        <div className={`${styles["services-container"]} bordered`}>
+          <div className={`${styles["services-content"]} bordered`}>
             <div className={styles["services-header"]}>
               <div className={styles["services-logo"]}>
                 <Image
@@ -109,6 +116,7 @@ const ServicesSection = () => {
             </table>
           </div>
         </div>
+
         {/* <Image
           src="/images/img-service2.svg"
           width={594}
