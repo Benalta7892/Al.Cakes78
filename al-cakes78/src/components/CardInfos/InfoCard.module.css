@@ -64,7 +64,7 @@
   border-bottom-right-radius: 124px;
   display: flex;
   align-items: center;
-  padding-inline: 20px;
+  padding: 20px;
   border: 2px solid #9a6f46;
   border-left: none;
 }
