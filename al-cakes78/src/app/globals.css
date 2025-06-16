@@ -93,6 +93,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Background image with overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.45)
+    ),
+    url("/images/dessert-background1.jpg") center/cover no-repeat;
+}
+
 /* === MAIN === */
 
 main {
@@ -101,7 +114,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin: 0 122px;
-  background-color: white;
+  /* background-color: white; */
 }
 
 /* Responsive main */
