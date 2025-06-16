@@ -22,8 +22,7 @@
 }
 
 .about-image-container2 {
-  transform: translateX(-2px);
-  transform: translateY(150px);
+  transform: translate(-2px, 150px);
   z-index: -1;
 }
 
