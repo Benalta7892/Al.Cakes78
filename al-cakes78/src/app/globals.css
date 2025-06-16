@@ -91,6 +91,12 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  /* background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("/images/background-body.jpg") center/cover no-repeat;
+  background-attachment: fixed; */
 }
 
 /* Background image with overlay */
@@ -103,7 +109,7 @@ body::before {
       rgba(255, 255, 255, 0.45),
       rgba(255, 255, 255, 0.45)
     ),
-    url("/images/dessert-background1.jpg") center/cover no-repeat;
+    url("/images/background-body.jpg") center/cover no-repeat;
 }
 
 /* === MAIN === */
