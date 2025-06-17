@@ -1,62 +1,94 @@
+/* === ABOUT SECTION LAYOUT === */
+
 .about-section {
-  display: flex;
-  /* flex-direction: row; */
-  /* align-items: center; */
-  height: 100%;
-}
-
-.about-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  align-self: flex-end;
-}
-
-.about-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  height: 100%;
 }
 
-.about-image-container2 {
-  transform: translate(-2px, 150px);
-  z-index: -1;
+.about-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 980px;
+}
+
+.about-header {
+  flex: 1;
+  width: 400px;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 590px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-header {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* === IMAGE BLOCK === */
+
+.about-image-container {
+  height: 100%;
 }
 
 .about-image {
   padding: 0;
 }
 
-.chef-about-image {
-  width: 579px;
-  height: 873px;
+.chef-about-image,
+.cake-about-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   box-shadow: 2px 4px 20px -2px #00000080;
 }
 
-.cake-about-image {
-  width: 498px;
-  height: 624px;
-  object-fit: cover;
-  box-shadow: 2px 4px 20px -2px #00000080;
-}
+/* === TEXT BLOCK === */
 
 .about-text-content {
+  flex: 2;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 10px;
   width: 100%;
-  background-color: white;
-  border-top-right-radius: 124px;
-  border-bottom-right-radius: 124px;
+  padding: 20px 30px 30px 20px;
+  background-color: var(--background);
+  border-left: none;
 }
 
+/* === SIGNATURE IMAGE === */
+
 .signature-image {
-  width: 200px;
+  width: 150px;
   height: 100px;
   object-fit: cover;
   align-self: flex-end;
+}
+
+/* === TEXT === */
+
+.about-text {
+  font-size: var(--fs-16);
+  line-height: 1.6;
+}
+
+/* === PLACEHOLDER === */
+
+.about-image-container2 {
+  /* Si tu réutilises cette classe plus tard, place ici les styles */
 }
