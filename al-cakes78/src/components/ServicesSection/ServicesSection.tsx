@@ -33,12 +33,16 @@ const ServicesSection = () => {
             </div>
 
             <p>
-              Les commandes doivent être passées au minimum 5 jours à l’avance.
-              Afin de garantir la qualité du travail, l’approvisionnement des
-              ingrédients et une organisation optimale, les demandes en dessous
-              de ce délai ne sont pas prises en charge. Toute commande est
-              acceptée sous réserve de disponibilité.
+              Les commandes doivent être passées au moins{" "}
+              <span className={styles["highlight-text"]}>5 jours avant</span> la
+              date de votre événement.
             </p>
+            <p>
+              Afin de garantir la qualité du travail, l’approvisionnement des
+              ingrédients et une organisation optimale, les demandes en deçà de
+              ce délai ne sont pas prises en charge.
+            </p>
+            <p>Toute commande est acceptée sous réserve de disponibilité.</p>
           </div>
         </div>
 
@@ -63,10 +67,16 @@ const ServicesSection = () => {
             </div>
 
             <p>
-              Pour un anniversaire, un événement ou juste pour le plaisir, je
-              prépare des gâteaux maison sur commande, livrés partout en
-              Île-de-France.
+              Que ce soit pour célébrer un anniversaire, marquer un événement ou
+              simplement savourer un moment sucré, je propose des gâteaux{" "}
+              <span className={styles["highlight-text"]}>
+                entièrement personnalisés
+              </span>
+              , pensés sur mesure selon{" "}
+              <span className={styles["highlight-text"]}>vos envies</span>, et
+              livrés partout en Île-de-France.
             </p>
+            <p>Une envie particulière ? Échangeons avec plaisir.</p>
           </div>
         </div>
 
@@ -91,9 +101,29 @@ const ServicesSection = () => {
             </div>
 
             <p>
-              Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-              Phas ellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+              Livraison ou retrait ? <br /> C’est vous qui choisissez !
             </p>
+
+            <p>
+              Je propose la{" "}
+              <span className={styles["highlight-text"]}>livraison</span>{" "}
+              partout en{" "}
+              <span className={styles["highlight-text"]}>Île-de-France</span>,
+              avec des frais ajustés selon la depuis ma cuisine située à{" "}
+              <span className={styles["highlight-text"]}>Versailles</span>,
+              point de départ de chaque commande.
+            </p>
+
+            <p>
+              À partir de <strong>85 € de commande</strong>, la livraison vous
+              est offerte — où que vous soyez en Île-de-France.
+            </p>
+
+            <p>
+              Chaque gâteau est soigneusement emballé afin de garantir sa
+              fraîcheur et son intégrité jusqu’à sa réception.
+            </p>
+
             <table className={styles["delivery-table"]}>
               <tbody>
                 <tr className={styles["delivery-row"]}>
