@@ -181,7 +181,7 @@ h3 {
 p {
   font-size: var(--fs-16);
   line-height: 1.6;
-  color: var(--color-caramel);
+  /* color: var(--color-caramel); */
 }
 
 /* === BUTTONS === */

@@ -91,6 +91,11 @@
   justify-content: flex-end;
 }
 
+.highlight-text {
+  font-weight: bold;
+  font-size: var(--fs-18);
+}
+
 .services-content p {
   margin-bottom: 30px;
 }
