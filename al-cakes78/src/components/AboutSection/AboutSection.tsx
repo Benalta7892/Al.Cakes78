@@ -53,7 +53,8 @@ const AboutSection = () => {
                   contribuer à rendre vos moments encore plus gourmands.
                 </p>
                 <p className={styles["about-text"]}>
-                  Alors, n’hésitez pas à me contacter pour en discuter !
+                  Alors, n’hésitez pas à me contacter pour en discuter ensemble
+                  !
                 </p>
                 <p className={styles["about-text"]}>
                   <strong>À très bientôt !</strong>
