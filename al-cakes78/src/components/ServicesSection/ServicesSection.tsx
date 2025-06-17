@@ -109,8 +109,8 @@ const ServicesSection = () => {
               <span className={styles["highlight-text"]}>livraison</span>{" "}
               partout en{" "}
               <span className={styles["highlight-text"]}>Île-de-France</span>,
-              avec des frais ajustés selon la depuis ma cuisine située à{" "}
-              <span className={styles["highlight-text"]}>Versailles</span>,
+              avec des frais ajustés selon la distance depuis ma cuisine située
+              à <span className={styles["highlight-text"]}>Versailles</span>,
               point de départ de chaque commande.
             </p>
 

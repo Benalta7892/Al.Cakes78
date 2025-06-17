@@ -74,7 +74,7 @@
 }
 
 .navlinks-container a {
-  margin: 0 40px;
+  margin: 0 30px;
   font-size: var(--fs-16);
   font-weight: bold;
   color: var(--color-caramel);
@@ -108,7 +108,7 @@
 
 @media (max-width: 850px) {
   .navlinks-container a {
-    margin: 0 20px;
+    margin: 0 14px;
   }
 }
 
