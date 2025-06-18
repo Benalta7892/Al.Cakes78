@@ -297,7 +297,7 @@ const StepObjet = () => {
                           checked={livraisonMode === "livraison"}
                           onChange={() => setLivraisonMode("livraison")}
                         />
-                        Livraison à l'adresse souhaitée
+                        Livraison à l&apos;adresse souhaitée
                       </label>
                     </div>
 
@@ -309,7 +309,8 @@ const StepObjet = () => {
                             checked={!adresseDiff}
                             onChange={() => setAdresseDiff((prev) => !prev)}
                           />
-                          L'adresse est identique à celle renseignée plus haut
+                          L&apos;adresse est identique à celle renseignée plus
+                          haut
                         </label>
 
                         {adresseDiff && (
