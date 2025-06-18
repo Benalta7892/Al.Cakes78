@@ -1,6 +1,6 @@
 import Image from "next/image";
-import FormStart from "../../components/Contact/FormStart/FormStart";
 import ContactCTA from "@/components/ContactCTA/ContactCTA";
+import StepObjet from "@/components/Contact/StepObjet/StepObjet";
 
 const page = () => {
   return (
@@ -13,7 +13,7 @@ const page = () => {
         className="vector-image"
       />
 
-      <FormStart />
+      <StepObjet />
 
       <Image
         src="/images/vector.svg"
