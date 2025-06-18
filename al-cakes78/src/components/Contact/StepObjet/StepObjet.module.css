@@ -1,0 +1,16 @@
+.step-objet-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-objet-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 600px;
+  width: 100%;
+  background-color: var(--background);
+}
