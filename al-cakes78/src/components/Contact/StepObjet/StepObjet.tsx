@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CAKES } from "@/data/cakes";
+import { DELIVERY_ZONES } from "@/data/deliveryZones";
 import styles from "./StepObjet.module.css";
 
 type CakeSelection = {
@@ -9,6 +10,25 @@ type CakeSelection = {
   slug: string;
   moldIndex: number;
   quantity: number;
+};
+
+const getDeliveryZone = (postalCode: string): 1 | 2 | 3 => {
+  if (DELIVERY_ZONES.zone1.includes(postalCode)) return 1;
+  if (DELIVERY_ZONES.zone2.includes(postalCode)) return 2;
+  return 3;
+};
+
+const getDeliveryFee = (zone: 1 | 2 | 3, total: number): number => {
+  if (total >= 85) return 0;
+  switch (zone) {
+    case 1:
+      return 10;
+    case 2:
+      return 15;
+    case 3:
+    default:
+      return 20;
+  }
 };
 
 const StepObjet = () => {
@@ -67,6 +87,16 @@ const StepObjet = () => {
   );
 
   const isFormComplete = cakesSelected.every((c) => c.slug !== "");
+
+  const livraisonPostalCode = adresseDiff
+    ? document.querySelector<HTMLInputElement>('input[name="livraison_postal"]')
+        ?.value || ""
+    : infosPerso.postal;
+
+  const deliveryZone = getDeliveryZone(livraisonPostalCode);
+  const deliveryFee =
+    livraisonMode === "livraison" ? getDeliveryFee(deliveryZone, total) : 0;
+  const totalWithDelivery = total + deliveryFee;
 
   return (
     <section className={styles["step-objet-section"]}>
@@ -180,17 +210,17 @@ const StepObjet = () => {
                   </div>
                 ))}
 
+                <div style={{ marginTop: "1rem" }}>
+                  <label>Sous-total</label>
+                  <input type="text" disabled value={`${total}€`} />
+                </div>
+
                 <button
                   type="button"
                   onClick={handleAddCake}
-                  className="btn btn-secondary">
+                  className="btn btn-primary">
                   Ajouter un entremets
                 </button>
-
-                <div style={{ marginTop: "1rem" }}>
-                  <label>Total</label>
-                  <input type="text" disabled value={`${total}€`} />
-                </div>
 
                 {isFormComplete && (
                   <>
@@ -351,14 +381,32 @@ const StepObjet = () => {
                             />
                           </>
                         )}
+
+                        <div>
+                          <label>Frais de livraison</label>
+                          <input
+                            type="text"
+                            disabled
+                            value={`${deliveryFee}€`}
+                          />
+                        </div>
                       </>
                     )}
+
+                    <div>
+                      <label>Total à payer</label>
+                      <input
+                        type="text"
+                        disabled
+                        value={`${totalWithDelivery}€`}
+                      />
+                    </div>
+
+                    <button type="submit" className="btn btn-primary">
+                      Envoyer la commande
+                    </button>
                   </>
                 )}
-
-                <button type="submit" className="btn btn-primary">
-                  Envoyer la commande
-                </button>
               </>
             )}
           </form>
