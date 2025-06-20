@@ -22,3 +22,10 @@
   gap: 20px;
   width: 100%;
 }
+
+.radio-input {
+  accent-color: var(--color-caramel);
+  background-color: var(--color-chocolate);
+  width: 18px;
+  height: 18px;
+}

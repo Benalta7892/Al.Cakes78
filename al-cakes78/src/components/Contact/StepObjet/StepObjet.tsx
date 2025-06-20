@@ -113,6 +113,7 @@ const StepObjet = () => {
                   value="commande"
                   checked={objet === "commande"}
                   onChange={() => setObjet("commande")}
+                  className={styles["radio-input"]}
                 />
                 Je veux passer une commande
               </label>
@@ -124,6 +125,7 @@ const StepObjet = () => {
                   value="renseignement"
                   checked={objet === "renseignement"}
                   onChange={() => setObjet("renseignement")}
+                  className={styles["radio-input"]}
                 />
                 Je veux un renseignement
               </label>
