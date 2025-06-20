@@ -106,7 +106,7 @@ const StepObjet = () => {
             <h2>Quel est l&apos;objet de votre demande ?</h2>
 
             <div>
-              <label>
+              <label style={{ display: "none" }}>
                 <input
                   type="radio"
                   name="objet"
@@ -118,7 +118,7 @@ const StepObjet = () => {
                 Je veux passer une commande
               </label>
               <br />
-              <label>
+              <label style={{ display: "none" }}>
                 <input
                   type="radio"
                   name="objet"
@@ -129,6 +129,19 @@ const StepObjet = () => {
                 />
                 Je veux un renseignement
               </label>
+
+              <select
+                id="objet"
+                name="objet"
+                value={objet}
+                onChange={(e) =>
+                  setObjet(e.target.value as "commande" | "renseignement" | "")
+                }
+                className={styles["select-input"]}>
+                <option value="">-- Sélectionnez un objet --</option>
+                <option value="commande">Je veux passer une commande</option>
+                <option value="renseignement">Je veux un renseignement</option>
+              </select>
             </div>
 
             {objet === "renseignement" && (

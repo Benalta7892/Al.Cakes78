@@ -23,9 +23,16 @@
   width: 100%;
 }
 
-.radio-input {
+/* .radio-input {
   accent-color: var(--color-caramel);
   background-color: var(--color-chocolate);
   width: 18px;
   height: 18px;
+} */
+
+.select-input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-chocolate);
+  font-size: 1rem;
 }
