@@ -14,18 +14,15 @@ const FormContact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.currentTarget;
+    const form = e.target;
+    const objet = form.objet.value;
+    const name = form.name.value;
+    const prenom = form.prenom.value;
+    const email = form.email.value;
+    const telephone = form.telephone.value;
+    const message = form.message.value;
 
-    const objet = objetSelected;
-    const name = (form.querySelector("#name") as HTMLInputElement).value;
-    const prenom = (form.querySelector("#prenom") as HTMLInputElement).value;
-    const email = (form.querySelector("#email") as HTMLInputElement).value;
-    const telephone = (form.querySelector("#telephone") as HTMLInputElement)
-      .value;
-    const message = (form.querySelector("#message") as HTMLTextAreaElement)
-      .value;
-
-    console.log({
+    console.log("Données du formulaire :", {
       objet,
       name,
       prenom,
@@ -33,6 +30,31 @@ const FormContact = () => {
       telephone,
       message,
     });
+
+    // 👇 Ici tu pourras plus tard envoyer vers une API ou un mail
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        objet,
+        name,
+        prenom,
+        email,
+        telephone,
+        message,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          alert("Votre message a bien été envoyé !");
+          setShowForm(!showForm);
+        } else {
+          alert("Une erreur est survenue.");
+        }
+      });
   };
 
   return (
