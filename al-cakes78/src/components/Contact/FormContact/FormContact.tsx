@@ -14,13 +14,17 @@ const FormContact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.target;
-    const objet = form.objet.value;
-    const name = form.name.value;
-    const prenom = form.prenom.value;
-    const email = form.email.value;
-    const telephone = form.telephone.value;
-    const message = form.message.value;
+    const form = e.target as HTMLFormElement;
+
+    const objet = (form.elements.namedItem("objet") as HTMLSelectElement).value;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const prenom = (form.elements.namedItem("prenom") as HTMLInputElement)
+      .value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+    const telephone = (form.elements.namedItem("telephone") as HTMLInputElement)
+      .value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
+      .value;
 
     console.log("Données du formulaire :", {
       objet,
