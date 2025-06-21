@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FormStart from "../../components/Contact/FormStart/FormStart";
+import FormContact from "@/components/Contact/FormContact/FormContact";
 import ContactCTA from "@/components/ContactCTA/ContactCTA";
 
 const page = () => {
@@ -13,7 +13,7 @@ const page = () => {
         className="vector-image"
       />
 
-      <FormStart />
+      <FormContact />
 
       <Image
         src="/images/vector.svg"
