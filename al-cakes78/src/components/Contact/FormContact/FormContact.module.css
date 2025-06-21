@@ -30,7 +30,7 @@
   justify-content: center;
   width: 100%;
   padding: 20px;
-  border: 2px solid var(--color-caramel);
+  box-shadow: 0 0 0 2px var(--color-caramel);
 }
 
 .form-renseignement {
@@ -70,6 +70,6 @@
 .form-input {
   width: 100%;
   padding: 10px;
-  border: 2px solid var(--color-caramel);
+  box-shadow: 0 0 0 2px var(--color-caramel);
   color: var(--color-chocolate);
 }
