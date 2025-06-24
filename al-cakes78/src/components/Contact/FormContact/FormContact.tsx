@@ -160,6 +160,25 @@ const FormContact = () => {
                 </button>
               </div>
             )}
+
+            {objetSelected === "commande" && (
+              <div className={styles["form-commande"]}>
+                <label htmlFor="" className={styles["form-label"]}>
+                  <h3>Choix du gateaux</h3>
+                </label>
+                <select
+                  name="gateaux"
+                  id="gateaux"
+                  className={styles["form-select"]}>
+                  <option value="">-- Selectionner --</option>
+                  <option value="dahlia">Dahlia</option>
+                  <option value="camélia">Camélia</option>
+                  <option value="iris">Iris</option>
+                  <option value="pivoine">Pivoine</option>
+                  <option value="mimosa">Mimosa</option>
+                </select>
+              </div>
+            )}
           </form>
         )}
       </div>
