@@ -31,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
   padding: 10px;
   box-shadow: 0 0 0 2px var(--color-caramel);
 }

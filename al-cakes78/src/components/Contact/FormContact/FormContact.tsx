@@ -163,20 +163,71 @@ const FormContact = () => {
 
             {objetSelected === "commande" && (
               <div className={styles["form-commande"]}>
-                <label htmlFor="" className={styles["form-label"]}>
-                  <h3>Choix du gateaux</h3>
-                </label>
-                <select
-                  name="gateaux"
-                  id="gateaux"
-                  className={styles["form-select"]}>
-                  <option value="">-- Selectionner --</option>
-                  <option value="dahlia">Dahlia</option>
-                  <option value="camélia">Camélia</option>
-                  <option value="iris">Iris</option>
-                  <option value="pivoine">Pivoine</option>
-                  <option value="mimosa">Mimosa</option>
-                </select>
+                <div className={styles["form-row"]}>
+                  {/* Choix du gateaux */}
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="" className={styles["form-label"]}>
+                      <h3>Choix du gateaux</h3>
+                    </label>
+                    <select
+                      name="gateaux"
+                      id="gateaux"
+                      className={styles["form-select"]}>
+                      <option value="">-- Selectionner --</option>
+                      <option value="dahlia">Dahlia</option>
+                      <option value="camélia">Camélia</option>
+                      <option value="iris">Iris</option>
+                      <option value="pivoine">Pivoine</option>
+                      <option value="mimosa">Mimosa</option>
+                    </select>
+                  </div>
+
+                  {/* Choix de la taille */}
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="" className={styles["form-label"]}>
+                      <h3>Taille</h3>
+                    </label>
+                    <select
+                      name="taille"
+                      id="taille"
+                      className={styles["form-select"]}>
+                      <option value="">-- Selectionner --</option>
+                      <option value="petit">6-8 Parts</option>
+                      <option value="moyen">8-10 Parts</option>
+                      <option value="grand">10-12 Parts</option>
+                    </select>
+                  </div>
+
+                  {/* Choix de la quantité */}
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="" className={styles["form-label"]}>
+                      <h3>Quantité</h3>
+                    </label>
+                    <input
+                      type="number"
+                      name="quantite"
+                      id="quantite"
+                      className={styles["form-input"]}
+                      min={1}
+                      defaultValue={1}
+                    />
+                  </div>
+
+                  {/* Prix */}
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="" className={styles["form-label"]}>
+                      <h3>Prix</h3>
+                    </label>
+                    <input
+                      type="text"
+                      name="prix"
+                      id="prix"
+                      className={styles["form-input"]}
+                      placeholder="Prix du gateaux"
+                      disabled
+                    />
+                  </div>
+                </div>
               </div>
             )}
           </form>
