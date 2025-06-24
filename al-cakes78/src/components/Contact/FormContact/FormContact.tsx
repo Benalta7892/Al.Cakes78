@@ -87,7 +87,7 @@ const FormContact = () => {
             </select>
 
             {objetSelected === "renseignement" && (
-              <div className={styles["form-renseignement"]}>
+              <div className={styles["form-section"]}>
                 <div className={styles["form-row"]}>
                   <div className={styles["form-col"]}>
                     <label htmlFor="name" className={styles["form-label"]}>
@@ -162,7 +162,7 @@ const FormContact = () => {
             )}
 
             {objetSelected === "commande" && (
-              <div className={styles["form-commande"]}>
+              <div className={styles["form-section"]}>
                 <div className={styles["form-row"]}>
                   {/* Choix du gateaux */}
                   <div className={styles["form-col"]}>
@@ -223,7 +223,7 @@ const FormContact = () => {
                       name="prix"
                       id="prix"
                       className={styles["form-input"]}
-                      placeholder="Prix du gateaux"
+                      placeholder="Prix"
                       disabled
                     />
                   </div>
