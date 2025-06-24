@@ -1,14 +1,29 @@
 "use client";
 
 import styles from "./FormContact.module.css";
+import { CAKES } from "@/data/cakes";
 import { useState } from "react";
 
 const FormContact = () => {
   const [showForm, setShowForm] = useState(false);
   const [objetSelected, setObjetSelected] = useState("");
+  const [gateau, setGateau] = useState("");
+  const [taille, setTaille] = useState("");
+  const [quantite, setQuantite] = useState(1);
+  const [prixTotal, setPrixTotal] = useState(0);
 
   const handleClick = () => {
     setShowForm(!showForm);
+  };
+
+  const updatePrix = (slug: string, taille: string, quantite: number) => {
+    const cake = CAKES.find((cake) => cake.slug === slug);
+    if (!cake) return setPrixTotal(0);
+
+    const mold = cake.molds.find((mold) => mold.size === taille);
+    if (!mold) return setPrixTotal(0);
+
+    setPrixTotal(mold.price * quantite);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -172,7 +187,14 @@ const FormContact = () => {
                     <select
                       name="gateaux"
                       id="gateaux"
-                      className={styles["form-select"]}>
+                      className={styles["form-select"]}
+                      value={gateau}
+                      onChange={(e) => {
+                        const selectedGateau = e.target.value;
+                        setGateau(selectedGateau);
+                        updatePrix(selectedGateau, taille, quantite);
+                        // setTaille(""); // Reset taille when gateau changes
+                      }}>
                       <option value="">-- Selectionner --</option>
                       <option value="dahlia">Dahlia</option>
                       <option value="camélia">Camélia</option>
@@ -190,11 +212,17 @@ const FormContact = () => {
                     <select
                       name="taille"
                       id="taille"
-                      className={styles["form-select"]}>
+                      className={styles["form-select"]}
+                      value={taille}
+                      onChange={(e) => {
+                        const selectedTaille = e.target.value;
+                        setTaille(selectedTaille);
+                        updatePrix(gateau, selectedTaille, quantite);
+                      }}>
                       <option value="">-- Selectionner --</option>
-                      <option value="petit">6-8 Parts</option>
-                      <option value="moyen">8-10 Parts</option>
-                      <option value="grand">10-12 Parts</option>
+                      <option value="6-8 Parts">6-8 Parts</option>
+                      <option value="8-10 Parts">8-10 Parts</option>
+                      <option value="10-12 Parts">10-12 Parts</option>
                     </select>
                   </div>
 
@@ -209,7 +237,12 @@ const FormContact = () => {
                       id="quantite"
                       className={styles["form-input"]}
                       min={1}
-                      defaultValue={1}
+                      value={quantite}
+                      onChange={(e) => {
+                        const newQuantite = parseInt(e.target.value);
+                        setQuantite(newQuantite);
+                        updatePrix(gateau, taille, newQuantite);
+                      }}
                     />
                   </div>
 
@@ -224,6 +257,7 @@ const FormContact = () => {
                       id="prix"
                       className={styles["form-input"]}
                       placeholder="Prix"
+                      value={prixTotal > 0 ? `${prixTotal.toFixed(2)} €` : ""}
                       disabled
                     />
                   </div>
