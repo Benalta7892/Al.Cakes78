@@ -50,7 +50,7 @@ const FormContact = () => {
       message,
     });
 
-    // 👇 Ici tu pourras plus tard envoyer vers une API ou un mail
+    // 👇 Envoyer vers une API ou un mail
     fetch("/api/contact", {
       method: "POST",
       headers: {
