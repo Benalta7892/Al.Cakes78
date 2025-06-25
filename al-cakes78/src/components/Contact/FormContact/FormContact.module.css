@@ -60,6 +60,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 10px;
 }
 
 .form-col {
@@ -68,7 +69,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .form-label {
@@ -84,4 +85,49 @@
   padding: 10px;
   box-shadow: 0 0 0 2px var(--color-caramel);
   color: var(--color-chocolate);
+}
+
+.btn-remove-container {
+  display: flex;
+  height: 100%;
+}
+
+.btn-remove {
+  background-color: var(--color-caramel);
+  color: white;
+  font-size: var(--fs-12);
+  border: none;
+  padding: 4px;
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.sous-total-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 20px;
+  width: 100%;
+  border-top: 2px dashed var(--color-caramel);
+  border-bottom: 2px dashed var(--color-caramel);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sous-total-container h3 {
+  margin: 0;
+}
+
+.sous-total {
+  width: fit-content;
+  white-space: nowrap;
+  padding: 10px;
+  box-shadow: 0 0 0 2px var(--color-caramel);
+  color: var(--color-chocolate);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
