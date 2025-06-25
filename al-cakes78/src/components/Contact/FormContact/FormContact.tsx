@@ -37,6 +37,10 @@ const FormContact = () => {
     );
   };
 
+  const handleRemoveCake = (index: number) => {
+    setGateaux((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const totalPrix = gateaux.reduce(
     (total, item) => total + (item.prix || 0),
     0
@@ -293,6 +297,17 @@ const FormContact = () => {
                         value={item.prix ? `${item.prix.toFixed(2)} €` : ""}
                         disabled
                       />
+                    </div>
+
+                    {/* Bouton pour supprimer le gateaux */}
+                    <div className={styles["btn-remove-container"]}>
+                      <button
+                        disabled={gateaux.length === 1}
+                        type="button"
+                        className={`btn btn-primary ${styles["btn-remove"]}`}
+                        onClick={() => handleRemoveCake(index)}>
+                        X
+                      </button>
                     </div>
                   </div>
                 ))}
