@@ -85,3 +85,31 @@
   box-shadow: 0 0 0 2px var(--color-caramel);
   color: var(--color-chocolate);
 }
+
+.sous-total-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 20px;
+  width: 100%;
+  border-top: 2px dashed var(--color-caramel);
+  border-bottom: 2px dashed var(--color-caramel);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sous-total-container h3 {
+  margin: 0;
+}
+
+.sous-total {
+  width: fit-content;
+  white-space: nowrap;
+  padding: 10px;
+  box-shadow: 0 0 0 2px var(--color-caramel);
+  color: var(--color-chocolate);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
