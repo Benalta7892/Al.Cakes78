@@ -10,9 +10,7 @@ const FormContact = () => {
   const [gateaux, setGateaux] = useState([
     { gateau: "", taille: "", quantite: 1, prix: 0 },
   ]);
-  // const [taille, setTaille] = useState("");
-  // const [quantite, setQuantite] = useState(1);
-  // const [prixTotal, setPrixTotal] = useState(0);
+  const [showSummary, setShowSummary] = useState(false);
 
   const handleClick = () => {
     setShowForm(!showForm);
@@ -449,7 +447,69 @@ const FormContact = () => {
                   </div>
                 </div>
 
+                {/* Choix de la livraison a l'adresse renseigné ou Click and Collect */}
+                <h3>Choix de la livraison</h3>
+                <div className={styles["form-row"]}>
+                  <div className={styles["form-col"]}>
+                    <select
+                      name="livraison"
+                      id="livraison"
+                      className={styles["form-select"]}
+                      required>
+                      <option value="">-- Selectionner --</option>
+                      <option value="livraison">
+                        Livraison à l&apos;adresse renseignée
+                      </option>
+                      <option value="click-and-collect">
+                        Click and Collect
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Si livraison à l'adresse renseignée, affiché le prix en fonction du département renseigné pour determiner la zone et le prix */}
+
+                {/* Afficher le prix total avec ou sans livraison */}
+                <div className={styles["sous-total-container"]}>
+                  <label htmlFor="" className={styles["form-label"]}>
+                    <h3>Total&nbsp;: </h3>
+                  </label>
+                  <p className={styles["sous-total"]}>
+                    <strong>{totalPrix.toFixed(2)} €</strong>
+                  </p>
+                </div>
+
                 {/* bouton pour afficher le detail de la commande avant de submit */}
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => setShowSummary(true)}>
+                  Voir le résumé de la commande
+                </button>
+              </div>
+            )}
+
+            {showSummary && (
+              <div className={styles["modal-overlay"]}>
+                <div className={styles["modal-content"]}>
+                  <h3>Détail de la commande</h3>
+                  <ul>
+                    {gateaux.map((g, i) => (
+                      <li key={i}>
+                        {g.quantite} × {g.gateau} ({g.taille}) –{" "}
+                        {g.prix.toFixed(2)} €
+                      </li>
+                    ))}
+                  </ul>
+                  <p>
+                    <strong>Total :</strong> {totalPrix.toFixed(2)} €
+                  </p>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => setShowSummary(false)}>
+                    Fermer
+                  </button>
+                </div>
               </div>
             )}
           </form>
