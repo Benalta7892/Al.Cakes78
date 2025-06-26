@@ -331,8 +331,95 @@ const FormContact = () => {
                       { gateau: "", taille: "", quantite: 1, prix: 0 },
                     ])
                   }>
-                  Ajouter
+                  Ajouter un gâteau
                 </button>
+
+                {/* Champs textarea pour une information utiles a transmettre (facultatif) */}
+                <div className={styles["form-col"]}>
+                  <label htmlFor="message" className={styles["form-label"]}>
+                    <h3>Informations utiles</h3>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className={styles["form-input"]}
+                    placeholder="Exemple : Allergies, etc."></textarea>
+                </div>
+
+                {/* Informations personnelles */}
+                <h3>Informations personnelles</h3>
+                <div className={styles["form-row"]}>
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="name" className={styles["form-label"]}>
+                      <h3>Nom</h3>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className={styles["form-input"]}
+                      required
+                    />
+                  </div>
+
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="prenom" className={styles["form-label"]}>
+                      <h3>Prénom</h3>
+                    </label>
+                    <input
+                      type="text"
+                      id="prenom"
+                      name="prenom"
+                      className={styles["form-input"]}
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* <h3>Adresse de livraison</h3> */}
+                <div className={styles["form-row"]}>
+                  <div className={`${styles["form-col"]} ${styles["adress"]}`}>
+                    <label htmlFor="adress" className={styles["form-label"]}>
+                      <h3>Adresse de livraison</h3>
+                    </label>
+                    <input
+                      type="text"
+                      id="adress"
+                      name="adress"
+                      className={styles["form-input"]}
+                      placeholder="Ex : 123 Rue de Paris"
+                      required
+                    />
+                  </div>
+
+                  <div className={`${styles["form-col"]} ${styles["code"]}`}>
+                    <label htmlFor="postal" className={styles["form-label"]}>
+                      <h3>Code postal</h3>
+                    </label>
+                    <input
+                      type="text"
+                      id="postal"
+                      name="postal"
+                      className={styles["form-input"]}
+                      placeholder="Ex : 75000"
+                      required
+                    />
+                  </div>
+
+                  <div className={`${styles["form-col"]} ${styles["city"]}`}>
+                    <label htmlFor="city" className={styles["form-label"]}>
+                      <h3>Ville</h3>
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      className={styles["form-input"]}
+                      placeholder="Ex : Paris"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
             )}
           </form>
