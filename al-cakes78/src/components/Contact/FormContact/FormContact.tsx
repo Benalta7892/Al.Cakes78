@@ -420,6 +420,36 @@ const FormContact = () => {
                     />
                   </div>
                 </div>
+
+                <div className={styles["form-row"]}>
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="email" className={styles["form-label"]}>
+                      <h3>Email</h3>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className={styles["form-input"]}
+                      required
+                    />
+                  </div>
+
+                  <div className={styles["form-col"]}>
+                    <label htmlFor="telephone" className={styles["form-label"]}>
+                      <h3>Télephone</h3>
+                    </label>
+                    <input
+                      type="tel"
+                      id="telephone"
+                      name="telephone"
+                      className={styles["form-input"]}
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* bouton pour afficher le detail de la commande avant de submit */}
               </div>
             )}
           </form>
