@@ -293,7 +293,7 @@ const FormContact = () => {
                         name="prix"
                         id="prix"
                         className={styles["form-input"]}
-                        placeholder="Prix"
+                        placeholder="0 €"
                         value={item.prix ? `${item.prix.toFixed(2)} €` : ""}
                         disabled
                       />
