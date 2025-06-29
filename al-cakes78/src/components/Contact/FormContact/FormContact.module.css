@@ -64,7 +64,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
 }
 
 .form-col {
@@ -92,9 +92,33 @@
   background-color: white;
 }
 
+/* .gateaux {
+  display: flex;
+  flex: 3;
+  width: 100%;
+} */
+
+/* .taille {
+  display: flex;
+  flex: 1;
+  width: 100%;
+} */
+
+/* .quantite {
+  display: flex;
+  flex: 1;
+  width: 100%;
+} */
+
+.prix .form-input {
+  padding: 10px 4px;
+}
+
 .btn-remove-container {
   display: flex;
   height: 100%;
+  flex: 1;
+  width: 100%;
 }
 
 .btn-remove {
