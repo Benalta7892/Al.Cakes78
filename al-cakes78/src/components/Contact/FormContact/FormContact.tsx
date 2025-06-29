@@ -4,6 +4,7 @@ import styles from "./FormContact.module.css";
 import { CAKES } from "@/data/cakes";
 import { useState } from "react";
 import { getDeliveryZone } from "@/utils/livraison";
+import Image from "next/image";
 
 const FormContact = () => {
   const [showForm, setShowForm] = useState(false);
@@ -30,6 +31,18 @@ const FormContact = () => {
     livraisonMode === "livraison" ? totalPrice + fraisLivraison : totalPrice;
 
   const [showSummary, setShowSummary] = useState(false);
+  const [formValues, setFormValues] = useState({
+    objet: "",
+    name: "",
+    prenom: "",
+    email: "",
+    telephone: "",
+    adress: "",
+    codePostal: "",
+    city: "",
+    message: "",
+    paiement: "",
+  });
 
   const handleClick = () => {
     setShowForm(!showForm);
@@ -85,6 +98,20 @@ const FormContact = () => {
       email,
       telephone,
       message,
+    });
+
+    setFormValues({
+      objet,
+      name,
+      prenom,
+      email,
+      telephone,
+      adress: (form.elements.namedItem("adress") as HTMLInputElement).value,
+      codePostal: (form.elements.namedItem("postal") as HTMLInputElement).value,
+      city: (form.elements.namedItem("city") as HTMLInputElement).value,
+      message,
+      paiement: (form.elements.namedItem("paiement") as HTMLSelectElement)
+        .value,
     });
 
     // 👇 Envoyer vers une API ou un mail
@@ -398,7 +425,14 @@ const FormContact = () => {
                     id="message"
                     name="message"
                     className={styles["form-input"]}
-                    placeholder="Exemple : Allergies, etc."></textarea>
+                    placeholder="Exemple : Allergies, etc."
+                    value={formValues.message}
+                    onChange={(e) =>
+                      setFormValues((prev) => ({
+                        ...prev,
+                        message: e.target.value,
+                      }))
+                    }></textarea>
                 </div>
                 {/* Informations personnelles */}
                 <h3>Informations personnelles</h3>
@@ -413,6 +447,13 @@ const FormContact = () => {
                       name="name"
                       className={styles["form-input"]}
                       required
+                      value={formValues.name}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          name: e.target.value,
+                        }))
+                      }
                     />
                   </div>
 
@@ -426,6 +467,13 @@ const FormContact = () => {
                       name="prenom"
                       className={styles["form-input"]}
                       required
+                      value={formValues.prenom}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          prenom: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
@@ -442,6 +490,13 @@ const FormContact = () => {
                       className={styles["form-input"]}
                       placeholder="Ex : 123 Rue de Paris"
                       required
+                      value={formValues.adress}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          adress: e.target.value,
+                        }))
+                      }
                     />
                   </div>
 
@@ -455,9 +510,18 @@ const FormContact = () => {
                       name="postal"
                       className={styles["form-input"]}
                       placeholder="Ex : 75000"
-                      value={codePostal}
-                      onChange={(e) => setCodePostal(e.target.value)}
+                      // value={codePostal}
+                      // onChange={(e) => setCodePostal(e.target.value)}
                       required
+                      value={formValues.codePostal}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setFormValues((prev) => ({
+                          ...prev,
+                          codePostal: value,
+                        }));
+                        setCodePostal(value);
+                      }}
                     />
                   </div>
 
@@ -472,6 +536,13 @@ const FormContact = () => {
                       className={styles["form-input"]}
                       placeholder="Ex : Paris"
                       required
+                      value={formValues.city}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          city: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
@@ -486,6 +557,13 @@ const FormContact = () => {
                       name="email"
                       className={styles["form-input"]}
                       required
+                      value={formValues.email}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
                     />
                   </div>
 
@@ -499,9 +577,17 @@ const FormContact = () => {
                       name="telephone"
                       className={styles["form-input"]}
                       required
+                      value={formValues.telephone}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          telephone: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
+
                 {/* Choix de la livraison a l'adresse renseigné ou Click and Collect */}
                 <h3>Choix de la livraison</h3>
                 <div className={styles["form-row"]}>
@@ -523,6 +609,7 @@ const FormContact = () => {
                     </select>
                   </div>
                 </div>
+
                 {/* Si livraison à l'adresse renseignée, affiché le prix en fonction du département renseigné pour determiner la zone et le prix */}
                 {livraisonMode === "livraison" && codePostal && (
                   <div className={styles["sous-total-container"]}>
@@ -542,6 +629,7 @@ const FormContact = () => {
                     </p>
                   </div>
                 )}
+
                 {/* Afficher le prix total avec ou sans livraison */}
                 <div className={styles["sous-total-container"]}>
                   <label htmlFor="" className={styles["form-label"]}>
@@ -551,8 +639,38 @@ const FormContact = () => {
                     <strong>{totalFinal.toFixed(2)} €</strong>
                   </p>
                 </div>
+
                 {/* Mode de paiement préféré */}
                 <h3>Mode de paiement préféré</h3>
+
+                <div className={styles["form-row"]}>
+                  <div className={styles["form-col"]}>
+                    <label
+                      htmlFor="paiement"
+                      className={styles["form-label"]}></label>
+                    <select
+                      name="paiement"
+                      id="paiement"
+                      className={styles["form-select"]}
+                      required
+                      value={formValues.paiement}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          paiement: e.target.value,
+                        }))
+                      }>
+                      <option value="">-- Selectionner --</option>
+                      <option value="espèces">💶 Espèces</option>
+                      <option value="virement-bancaire">
+                        🔁 Virement bancaire
+                      </option>
+                      <option value="appli-paiement">
+                        📲 Paiement via appli (PayPal / Lydia )
+                      </option>
+                    </select>
+                  </div>
+                </div>
                 <div className={styles["disclaimer-container"]}>
                   <span
                     role="img"
@@ -580,27 +698,7 @@ const FormContact = () => {
                     ⚠️
                   </span>
                 </div>
-                <div className={styles["form-row"]}>
-                  <div className={styles["form-col"]}>
-                    <label
-                      htmlFor="paiement"
-                      className={styles["form-label"]}></label>
-                    <select
-                      name="paiement"
-                      id="paiement"
-                      className={styles["form-select"]}
-                      required>
-                      <option value="">-- Selectionner --</option>
-                      <option value="espèces">💶 Espèces</option>
-                      <option value="virement-bancaire">
-                        🔁 Virement bancaire
-                      </option>
-                      <option value="appli-paiement">
-                        📲 Paiement via appli (PayPal / Lydia )
-                      </option>
-                    </select>
-                  </div>
-                </div>
+
                 {/* bouton pour afficher le detail de la commande avant de submit */}
                 <button
                   type="button"
@@ -612,25 +710,186 @@ const FormContact = () => {
             )}
 
             {showSummary && (
-              <div className={styles["modal-overlay"]}>
-                <div className={styles["modal-content"]}>
-                  <h3>Détail de la commande</h3>
-                  <ul>
-                    {gateaux.map((g, i) => (
-                      <li key={i}>
-                        {g.quantite} × {g.gateau} ({g.taille}) –{" "}
-                        {g.prix.toFixed(2)} €
-                      </li>
-                    ))}
-                  </ul>
-                  <p>
-                    <strong>Total :</strong> {totalPrix.toFixed(2)} €
-                  </p>
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => setShowSummary(false)}>
-                    Fermer
-                  </button>
+              <div className={`${styles["modal-overlay"]}`}>
+                <div className={`${styles["modal-content"]} bordered`}>
+                  <div className={`${styles["modal-header"]} bordered`}>
+                    <h2>Détails de la commande</h2>
+
+                    <div className={styles["modal-header-content"]}>
+                      <div className={styles["modal-header-text"]}>
+                        <h3>Vos coordonnées</h3>
+
+                        <div className={styles["contact-info"]}>
+                          <Image
+                            src="/images/name-logo.png"
+                            width={20}
+                            height={20}
+                            alt="Logo"
+                            className={styles["img"]}
+                          />
+                          <p>
+                            {formValues.name} {formValues.prenom}
+                          </p>
+                        </div>
+
+                        <div className={styles["contact-info"]}>
+                          <Image
+                            src="/images/name-logo.png"
+                            width={20}
+                            height={20}
+                            alt="Logo"
+                            className={styles["img"]}
+                          />
+                          <p>
+                            {formValues.adress} <br />
+                            {formValues.codePostal} {formValues.city}
+                          </p>
+                        </div>
+
+                        <div className={styles["contact-info"]}>
+                          <Image
+                            src="/images/name-logo.png"
+                            width={20}
+                            height={20}
+                            alt="Logo"
+                            className={styles["img"]}
+                          />
+                          <p>{formValues.email}</p>
+                        </div>
+
+                        <div className={styles["contact-info"]}>
+                          <Image
+                            src="/images/name-logo.png"
+                            width={20}
+                            height={20}
+                            alt="Logo"
+                            className={styles["img"]}
+                          />
+                          <p>{formValues.telephone}</p>
+                        </div>
+                      </div>
+
+                      <div className={styles["modal-header-logo"]}>
+                        <Image
+                          src="/images/Logo.svg"
+                          width={264}
+                          height={237}
+                          alt="Logo"
+                          className={styles["img"]}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Tableau Gâteaux */}
+                    <table className={styles["order-table"]}>
+                      <thead>
+                        <tr>
+                          <th>Gâteau</th>
+                          <th>Taille</th>
+                          <th>Quantité</th>
+                          <th>Prix</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {gateaux.map((g, i) => (
+                          <tr key={i}>
+                            <td>{g.gateau}</td>
+                            <td>{g.taille}</td>
+                            <td>{g.quantite}</td>
+                            <td>{g.prix.toFixed(2)} €</td>
+                          </tr>
+                        ))}
+                        <tr>
+                          <td colSpan={3}>
+                            <strong>Sous-total</strong>
+                          </td>
+                          <td>
+                            <strong>{totalPrix.toFixed(2)} €</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div className={styles["align-baseline"]}>
+                      <h3>Mode de livraison :</h3>
+                      <p>
+                        {livraisonMode === "livraison"
+                          ? "Livraison à l'adresse"
+                          : "Click and Collect"}
+                      </p>
+                    </div>
+
+                    {/* Tableau Livraison */}
+                    {livraisonMode === "livraison" && (
+                      <table className={styles["order-table"]}>
+                        <thead>
+                          <tr>
+                            <th>Département</th>
+                            <th>Rayon</th>
+                            <th>Zone</th>
+                            <th>Prix</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{formValues.codePostal}</td>
+                            <td>{zoneDescription}</td>
+                            <td>{zoneLivraison}</td>
+                            <td>
+                              <strong>{fraisLivraison.toFixed(2)} €</strong>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colSpan={3}>
+                              <strong>Total avec livraison</strong>
+                            </td>
+                            <td>
+                              <strong>{totalFinal.toFixed(2)} €</strong>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    )}
+
+                    {livraisonMode === "click-and-collect" && (
+                      <table className={styles["order-table"]}>
+                        <tbody>
+                          <tr>
+                            <td colSpan={3}>
+                              <strong>Total</strong>
+                            </td>
+                            <td>
+                              <strong>{totalFinal.toFixed(2)} €</strong>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    )}
+
+                    {livraisonMode === "click-and-collect" && (
+                      <p>
+                        <strong>Total :</strong> {totalFinal.toFixed(2)} €
+                      </p>
+                    )}
+
+                    <div className={styles["align-baseline"]}>
+                      <h3>Mode de paiement choisi :</h3>
+                      <p>{formValues.paiement}</p>
+                    </div>
+
+                    {formValues.message && (
+                      <div className={styles["align-baseline"]}>
+                        <h3>Votre message :</h3>
+                        <p>{formValues.message}</p>
+                      </div>
+                    )}
+
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => setShowSummary(false)}>
+                      Fermer
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

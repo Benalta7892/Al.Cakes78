@@ -211,18 +211,132 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
   z-index: 1000;
+  padding: 20px;
 }
 
 .modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  min-width: 300px;
-  max-width: 90%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: var(--background);
+  max-height: fit-content;
+  width: 100%;
+  max-width: 600px;
+  overflow-x: auto;
+  border: 2px solid var(--color-caramel);
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  align-self: start;
+  font-size: var(--fs-18);
+}
+
+.modal-header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 10px; */
+}
+
+.modal-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  gap: 10px;
+  /* flex: 2; */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: start;
+  color: var(--color-caramel);
+}
+
+.modal-header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* flex: 1; */
+}
+
+.modal-header-logo img {
+  width: 150px;
+}
+
+.align-baseline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+  color: var(--color-caramel);
+}
+
+.align-baseline h3 {
+  margin: 0;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-chocolate);
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--color-caramel);
+}
+
+.order-table th,
+.order-table td {
+  text-align: left;
+  border-bottom: 1px dashed var(--color-caramel);
+}
+
+.order-table thead tr th {
+  border-bottom: none;
+}
+
+.order-table tr:last-child td {
+  border-bottom: none;
+}
+
+.order-table th {
+  background-color: var(--color-caramel);
+  color: white;
+}
+
+/* Centrer Taille (2e) et Quantité (3e) sauf dernière ligne */
+.order-table tbody tr:not(:last-child) td:nth-child(2),
+.order-table tbody tr:not(:last-child) td:nth-child(3) {
+  text-align: center;
+}
+
+/* Centrer les en-têtes correspondants */
+.order-table thead th:nth-child(2),
+.order-table thead th:nth-child(3) {
+  text-align: center;
+}
+
+/* Aligner à droite toutes les cellules de prix, même dans la dernière ligne */
+.order-table td:nth-child(4),
+.order-table th:nth-child(4),
+.order-table td:last-child {
+  text-align: right;
 }
