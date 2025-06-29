@@ -199,7 +199,8 @@ const FormContact = () => {
                 {gateaux.map((item, index) => (
                   <div key={index} className={styles["form-row"]}>
                     {/* Choix du gateaux */}
-                    <div className={styles["form-col"]}>
+                    <div
+                      className={`${styles["form-col"]} ${styles["gateaux"]}`}>
                       <label htmlFor="" className={styles["form-label"]}>
                         <h3>Choix du gateaux</h3>
                       </label>
@@ -227,7 +228,8 @@ const FormContact = () => {
                     </div>
 
                     {/* Choix de la taille */}
-                    <div className={styles["form-col"]}>
+                    <div
+                      className={`${styles["form-col"]} ${styles["taille"]}`}>
                       <label htmlFor="" className={styles["form-label"]}>
                         <h3>Taille</h3>
                       </label>
@@ -253,7 +255,8 @@ const FormContact = () => {
                     </div>
 
                     {/* Choix de la quantité */}
-                    <div className={styles["form-col"]}>
+                    <div
+                      className={`${styles["form-col"]} ${styles["quantite"]}`}>
                       <label htmlFor="" className={styles["form-label"]}>
                         <h3>Quantité</h3>
                       </label>
@@ -282,7 +285,7 @@ const FormContact = () => {
                     </div>
 
                     {/* Prix */}
-                    <div className={styles["form-col"]}>
+                    <div className={`${styles["form-col"]} ${styles["prix"]}`}>
                       <label htmlFor="" className={styles["form-label"]}>
                         <h3>Prix</h3>
                       </label>
