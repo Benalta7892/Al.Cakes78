@@ -117,7 +117,31 @@ const FormContact = () => {
     <section className={`${styles["form-contact-section"]} bordered`}>
       <div className={`${styles["form-contact-container"]} bordered`}>
         <h2>Formulaire de contact</h2>
-
+        <div className={styles["disclaimer-container"]}>
+          <span
+            role="img"
+            aria-label="warning"
+            className={styles["warning-icon"]}>
+            ⚠️
+          </span>
+          <p className={styles["disclaimer"]}>
+            Ce site est une démonstration technique réalisée dans le cadre d’un{" "}
+            <strong>projet expérimental</strong> de développement web. Toutes
+            les fonctionnalités sont opérationnelles y compris le formulaire
+            dont l&apos;envoi est volontairement désactivé.{" "}
+            <strong>
+              Aucune commande n’est enregistrée ni traitée, aucune information
+              personnelle n’est conservée et aucun paiement n’est requis
+            </strong>
+            .
+          </p>
+          <span
+            role="img"
+            aria-label="warning"
+            className={styles["warning-icon"]}>
+            ⚠️
+          </span>
+        </div>
         {!showForm ? (
           <button className="btn btn-primary" onClick={handleClick}>
             Commencer
@@ -140,6 +164,15 @@ const FormContact = () => {
 
             {objetSelected === "renseignement" && (
               <div className={styles["form-section"]}>
+                <br />
+                <h3>Formulaire de renseignement</h3>
+                <p>
+                  Merci de remplir ce formulaire pour toute demande de
+                  renseignement.
+                </p>
+
+                {/* Informations personnelles */}
+                {/* <h3>Informations personnelles</h3> */}
                 <div className={styles["form-row"]}>
                   <div className={styles["form-col"]}>
                     <label htmlFor="name" className={styles["form-label"]}>
@@ -215,6 +248,11 @@ const FormContact = () => {
 
             {objetSelected === "commande" && (
               <div className={styles["form-section"]}>
+                <br />
+                <h3>Formulaire de commande</h3>
+                <p>
+                  Merci de remplir ce formulaire pour toute demande de commande.
+                </p>
                 {gateaux.map((item, index) => (
                   <div key={index} className={styles["form-row"]}>
                     {/* Choix du gateaux */}
@@ -331,7 +369,6 @@ const FormContact = () => {
                     </div>
                   </div>
                 ))}
-
                 <div className={styles["sous-total-container"]}>
                   <label htmlFor="" className={styles["form-label"]}>
                     <h3>Sous-total&nbsp;: </h3>
@@ -340,7 +377,6 @@ const FormContact = () => {
                     <strong>{totalPrix.toFixed(2)} €</strong>
                   </p>
                 </div>
-
                 {/* Bouton pour ajouter un gateaux */}
                 <button
                   type="button"
@@ -353,7 +389,6 @@ const FormContact = () => {
                   }>
                   Ajouter un gâteau
                 </button>
-
                 {/* Champs textarea pour une information utiles a transmettre (facultatif) */}
                 <div className={styles["form-col"]}>
                   <label htmlFor="message" className={styles["form-label"]}>
@@ -365,7 +400,6 @@ const FormContact = () => {
                     className={styles["form-input"]}
                     placeholder="Exemple : Allergies, etc."></textarea>
                 </div>
-
                 {/* Informations personnelles */}
                 <h3>Informations personnelles</h3>
                 <div className={styles["form-row"]}>
@@ -395,7 +429,6 @@ const FormContact = () => {
                     />
                   </div>
                 </div>
-
                 {/* <h3>Adresse de livraison</h3> */}
                 <div className={styles["form-row"]}>
                   <div className={`${styles["form-col"]} ${styles["adress"]}`}>
@@ -442,7 +475,6 @@ const FormContact = () => {
                     />
                   </div>
                 </div>
-
                 <div className={styles["form-row"]}>
                   <div className={styles["form-col"]}>
                     <label htmlFor="email" className={styles["form-label"]}>
@@ -470,7 +502,6 @@ const FormContact = () => {
                     />
                   </div>
                 </div>
-
                 {/* Choix de la livraison a l'adresse renseigné ou Click and Collect */}
                 <h3>Choix de la livraison</h3>
                 <div className={styles["form-row"]}>
@@ -492,9 +523,7 @@ const FormContact = () => {
                     </select>
                   </div>
                 </div>
-
                 {/* Si livraison à l'adresse renseignée, affiché le prix en fonction du département renseigné pour determiner la zone et le prix */}
-
                 {livraisonMode === "livraison" && codePostal && (
                   <div className={styles["sous-total-container"]}>
                     <label className={styles["form-label"]}>
@@ -513,7 +542,6 @@ const FormContact = () => {
                     </p>
                   </div>
                 )}
-
                 {/* Afficher le prix total avec ou sans livraison */}
                 <div className={styles["sous-total-container"]}>
                   <label htmlFor="" className={styles["form-label"]}>
@@ -523,7 +551,56 @@ const FormContact = () => {
                     <strong>{totalFinal.toFixed(2)} €</strong>
                   </p>
                 </div>
-
+                {/* Mode de paiement préféré */}
+                <h3>Mode de paiement préféré</h3>
+                <div className={styles["disclaimer-container"]}>
+                  <span
+                    role="img"
+                    aria-label="warning"
+                    className={styles["warning-icon"]}>
+                    ⚠️
+                  </span>
+                  <p className={styles["disclaimer"]}>
+                    Ce site est une démonstration technique réalisée dans le
+                    cadre d’un <strong>projet expérimental</strong> de
+                    développement web. Toutes les fonctionnalités sont
+                    opérationnelles y compris le formulaire dont l&apos;envoi
+                    est volontairement désactivé.{" "}
+                    <strong>
+                      Aucune commande n’est enregistrée ni traitée, aucune
+                      information personnelle n’est conservée et aucun paiement
+                      n’est requis
+                    </strong>
+                    .
+                  </p>
+                  <span
+                    role="img"
+                    aria-label="warning"
+                    className={styles["warning-icon"]}>
+                    ⚠️
+                  </span>
+                </div>
+                <div className={styles["form-row"]}>
+                  <div className={styles["form-col"]}>
+                    <label
+                      htmlFor="paiement"
+                      className={styles["form-label"]}></label>
+                    <select
+                      name="paiement"
+                      id="paiement"
+                      className={styles["form-select"]}
+                      required>
+                      <option value="">-- Selectionner --</option>
+                      <option value="espèces">💶 Espèces</option>
+                      <option value="virement-bancaire">
+                        🔁 Virement bancaire
+                      </option>
+                      <option value="appli-paiement">
+                        📲 Paiement via appli (PayPal / Lydia )
+                      </option>
+                    </select>
+                  </div>
+                </div>
                 {/* bouton pour afficher le detail de la commande avant de submit */}
                 <button
                   type="button"
