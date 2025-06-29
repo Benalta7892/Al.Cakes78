@@ -3,6 +3,7 @@
 import styles from "./FormContact.module.css";
 import { CAKES } from "@/data/cakes";
 import { useState } from "react";
+import { getDeliveryZone } from "@/utils/livraison";
 
 const FormContact = () => {
   const [showForm, setShowForm] = useState(false);
@@ -10,6 +11,24 @@ const FormContact = () => {
   const [gateaux, setGateaux] = useState([
     { gateau: "", taille: "", quantite: 1, prix: 0 },
   ]);
+
+  const [livraisonMode, setLivraisonMode] = useState("");
+  const [codePostal, setCodePostal] = useState("");
+  const totalPrice = gateaux.reduce(
+    (total, item) => total + (item.prix || 0),
+    0
+  );
+  const {
+    zone: zoneLivraison,
+    price: fraisLivraison,
+    description: zoneDescription,
+  } = codePostal
+    ? getDeliveryZone(codePostal, totalPrice)
+    : { zone: "", price: 0, description: "" };
+
+  const totalFinal =
+    livraisonMode === "livraison" ? totalPrice + fraisLivraison : totalPrice;
+
   const [showSummary, setShowSummary] = useState(false);
 
   const handleClick = () => {
@@ -403,6 +422,8 @@ const FormContact = () => {
                       name="postal"
                       className={styles["form-input"]}
                       placeholder="Ex : 75000"
+                      value={codePostal}
+                      onChange={(e) => setCodePostal(e.target.value)}
                       required
                     />
                   </div>
@@ -458,6 +479,8 @@ const FormContact = () => {
                       name="livraison"
                       id="livraison"
                       className={styles["form-select"]}
+                      value={livraisonMode}
+                      onChange={(e) => setLivraisonMode(e.target.value)}
                       required>
                       <option value="">-- Selectionner --</option>
                       <option value="livraison">
@@ -472,13 +495,32 @@ const FormContact = () => {
 
                 {/* Si livraison à l'adresse renseignée, affiché le prix en fonction du département renseigné pour determiner la zone et le prix */}
 
+                {livraisonMode === "livraison" && codePostal && (
+                  <div className={styles["sous-total-container"]}>
+                    <label className={styles["form-label"]}>
+                      <div className={styles["livraison-info"]}>
+                        <h3>Livraison&nbsp;: </h3>
+                        {zoneLivraison && (
+                          <span className={styles["zone-info"]}>
+                            {" "}
+                            ({zoneLivraison} {zoneDescription})
+                          </span>
+                        )}
+                      </div>
+                    </label>
+                    <p className={styles["sous-total"]}>
+                      <strong>{fraisLivraison.toFixed(2)} €</strong>
+                    </p>
+                  </div>
+                )}
+
                 {/* Afficher le prix total avec ou sans livraison */}
                 <div className={styles["sous-total-container"]}>
                   <label htmlFor="" className={styles["form-label"]}>
                     <h3>Total&nbsp;: </h3>
                   </label>
                   <p className={styles["sous-total"]}>
-                    <strong>{totalPrix.toFixed(2)} €</strong>
+                    <strong>{totalFinal.toFixed(2)} €</strong>
                   </p>
                 </div>
 
