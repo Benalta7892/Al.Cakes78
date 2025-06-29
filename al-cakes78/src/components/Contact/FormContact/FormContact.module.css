@@ -177,6 +177,16 @@
   flex: 1;
 }
 
+.livraison-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.zone-info {
+  text-underline-offset: 5px !important;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
