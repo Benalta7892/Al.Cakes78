@@ -87,12 +87,12 @@
   gap: 10px;
 }
 
-/* @media (max-width: 500px) {
+@media (max-width: 500px) {
   .form-row {
     flex-direction: column;
     gap: 20px;
   }
-} */
+}
 
 .form-col {
   display: flex;
