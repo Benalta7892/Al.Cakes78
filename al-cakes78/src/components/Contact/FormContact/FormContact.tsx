@@ -285,9 +285,11 @@ const FormContact = () => {
                     {/* Choix du gateaux */}
                     <div
                       className={`${styles["form-col"]} ${styles["gateaux"]}`}>
-                      <label htmlFor="" className={styles["form-label"]}>
-                        <h3>Gateaux</h3>
-                      </label>
+                      {index === 0 && (
+                        <label htmlFor="" className={styles["form-label"]}>
+                          <h3>Gateaux</h3>
+                        </label>
+                      )}
                       <select
                         name="gateaux"
                         id="gateaux"
@@ -314,9 +316,11 @@ const FormContact = () => {
                     {/* Choix de la taille */}
                     <div
                       className={`${styles["form-col"]} ${styles["taille"]}`}>
-                      <label htmlFor="" className={styles["form-label"]}>
-                        <h3>Taille</h3>
-                      </label>
+                      {index === 0 && (
+                        <label htmlFor="" className={styles["form-label"]}>
+                          <h3>Taille</h3>
+                        </label>
+                      )}
                       <select
                         name="taille"
                         id="taille"
@@ -341,9 +345,11 @@ const FormContact = () => {
                     {/* Choix de la quantité */}
                     <div
                       className={`${styles["form-col"]} ${styles["quantite"]}`}>
-                      <label htmlFor="" className={styles["form-label"]}>
-                        <h3>Quantité</h3>
-                      </label>
+                      {index === 0 && (
+                        <label htmlFor="" className={styles["form-label"]}>
+                          <h3>Quantité</h3>
+                        </label>
+                      )}
                       <input
                         type="number"
                         name="quantite"
@@ -370,9 +376,11 @@ const FormContact = () => {
 
                     {/* Prix */}
                     <div className={`${styles["form-col"]} ${styles["prix"]}`}>
-                      <label htmlFor="" className={styles["form-label"]}>
-                        <h3>Prix</h3>
-                      </label>
+                      {index === 0 && (
+                        <label htmlFor="" className={styles["form-label"]}>
+                          <h3>Prix</h3>
+                        </label>
+                      )}
                       <input
                         type="text"
                         name="prix"
