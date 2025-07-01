@@ -2,7 +2,7 @@
 
 import styles from "./FormContact.module.css";
 import { CAKES } from "@/data/cakes";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { getDeliveryZone } from "@/utils/livraison";
 import Image from "next/image";
 import { useIsMobile } from "@/utils/hooks";
@@ -46,6 +46,7 @@ const FormContact = () => {
   });
 
   const isMobile = useIsMobile();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleClick = () => {
     setShowForm(!showForm);
@@ -83,64 +84,65 @@ const FormContact = () => {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
+    const formType = (form.elements.namedItem("formType") as HTMLInputElement)
+      ?.value;
 
-    const objet = (form.elements.namedItem("objet") as HTMLSelectElement).value;
-    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-    const prenom = (form.elements.namedItem("prenom") as HTMLInputElement)
-      .value;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    const telephone = (form.elements.namedItem("telephone") as HTMLInputElement)
-      .value;
-    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
-      .value;
+    if (formType === "commande") {
+      const data = {
+        ...formValues,
+        objet: "commande",
+        gateaux,
+        livraisonMode,
+        totalPrix,
+        fraisLivraison,
+        totalFinal,
+      };
 
-    console.log("Données du formulaire :", {
-      objet,
-      name,
-      prenom,
-      email,
-      telephone,
-      message,
-    });
+      console.log("Commande à envoyer :", data);
 
-    setFormValues({
-      objet,
-      name,
-      prenom,
-      email,
-      telephone,
-      adress: (form.elements.namedItem("adress") as HTMLInputElement).value,
-      codePostal: (form.elements.namedItem("postal") as HTMLInputElement).value,
-      city: (form.elements.namedItem("city") as HTMLInputElement).value,
-      message,
-      paiement: (form.elements.namedItem("paiement") as HTMLSelectElement)
-        .value,
-    });
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Commande envoyée !");
+            setShowForm(false);
+          } else {
+            alert("Erreur serveur lors de l'envoi.");
+          }
+        });
+    } else if (formType === "renseignement") {
+      const data = {
+        objet: "renseignement",
+        name: (form.elements.namedItem("name") as HTMLInputElement).value,
+        prenom: (form.elements.namedItem("prenom") as HTMLInputElement).value,
+        email: (form.elements.namedItem("email") as HTMLInputElement).value,
+        telephone: (form.elements.namedItem("telephone") as HTMLInputElement)
+          .value,
+        message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+          .value,
+      };
 
-    // 👇 Envoyer vers une API ou un mail
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        objet,
-        name,
-        prenom,
-        email,
-        telephone,
-        message,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          alert("Votre message a bien été envoyé !");
-          setShowForm(!showForm);
-        } else {
-          alert("Une erreur est survenue.");
-        }
-      });
+      console.log("Renseignement à envoyer :", data);
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Message envoyé !");
+            setShowForm(false);
+          } else {
+            alert("Erreur serveur lors de l'envoi.");
+          }
+        });
+    }
   };
 
   return (
@@ -177,7 +179,17 @@ const FormContact = () => {
             Commencer
           </button>
         ) : (
-          <form className={styles["form-contact"]} onSubmit={handleSubmit}>
+          <form
+            ref={formRef}
+            className={styles["form-contact"]}
+            onSubmit={handleSubmit}>
+            <input
+              type="hidden"
+              name="formType"
+              value={
+                objetSelected === "commande" ? "commande" : "renseignement"
+              }
+            />
             <label htmlFor="objet">
               <h3>Quel est l&apos;objet de votre demande ?</h3>
             </label>
@@ -186,7 +198,8 @@ const FormContact = () => {
               id="objet"
               value={objetSelected}
               onChange={(e) => setObjetSelected(e.target.value)}
-              className={styles["form-select"]}>
+              className={styles["form-select"]}
+              required>
               <option value="">-- Selectionner --</option>
               <option value="commande">Je veux passer une commande</option>
               <option value="renseignement">Je veux un renseignement</option>
@@ -921,8 +934,11 @@ const FormContact = () => {
 
                     <button
                       className="btn btn-primary"
-                      onClick={() => setShowSummary(false)}>
-                      Fermer
+                      onClick={() => {
+                        setShowSummary(false);
+                        formRef.current?.requestSubmit();
+                      }}>
+                      Envoyer ma demande
                     </button>
                   </div>
                 </div>
