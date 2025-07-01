@@ -286,7 +286,7 @@ const FormContact = () => {
                     <div
                       className={`${styles["form-col"]} ${styles["gateaux"]}`}>
                       <label htmlFor="" className={styles["form-label"]}>
-                        <h3>Choix du gateaux</h3>
+                        <h3>Gateaux</h3>
                       </label>
                       <select
                         name="gateaux"
