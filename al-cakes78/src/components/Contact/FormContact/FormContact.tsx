@@ -5,6 +5,7 @@ import { CAKES } from "@/data/cakes";
 import { useState } from "react";
 import { getDeliveryZone } from "@/utils/livraison";
 import Image from "next/image";
+import { useIsMobile } from "@/utils/hooks";
 
 const FormContact = () => {
   const [showForm, setShowForm] = useState(false);
@@ -43,6 +44,8 @@ const FormContact = () => {
     message: "",
     paiement: "",
   });
+
+  const isMobile = useIsMobile();
 
   const handleClick = () => {
     setShowForm(!showForm);
@@ -280,130 +283,151 @@ const FormContact = () => {
                 <p>
                   Merci de remplir ce formulaire pour toute demande de commande.
                 </p>
-                {gateaux.map((item, index) => (
-                  <div key={index} className={styles["form-row"]}>
-                    {/* Choix du gateaux */}
+
+                {gateaux.map((item, index) => {
+                  const alwaysShowLabels = isMobile;
+
+                  return (
                     <div
-                      className={`${styles["form-col"]} ${styles["gateaux"]}`}>
-                      {index === 0 && (
-                        <label htmlFor="" className={styles["form-label"]}>
-                          <h3>Gateaux</h3>
-                        </label>
-                      )}
-                      <select
-                        name="gateaux"
-                        id="gateaux"
-                        className={styles["form-select"]}
-                        value={item.gateau}
-                        onChange={(e) => {
-                          const value = e.target.value;
-                          setGateaux((prev) =>
-                            prev.map((g, i) =>
-                              i === index ? { ...g, gateau: value } : g
-                            )
-                          );
-                          updatePrix(value, item.taille, item.quantite, index);
-                        }}>
-                        <option value="">-- Selectionner --</option>
-                        <option value="dahlia">Dahlia</option>
-                        <option value="camélia">Camélia</option>
-                        <option value="iris">Iris</option>
-                        <option value="pivoine">Pivoine</option>
-                        <option value="mimosa">Mimosa</option>
-                      </select>
-                    </div>
+                      key={index}
+                      className={`${styles["form-row"]} ${styles["gateaux-row"]}`}>
+                      {/* Choix du gateaux */}
+                      <div
+                        className={`${styles["form-col"]} ${styles["gateaux"]}`}>
+                        {(alwaysShowLabels || index === 0) && (
+                          <label htmlFor="" className={styles["form-label"]}>
+                            <h3>Gateaux</h3>
+                          </label>
+                        )}
+                        <select
+                          name="gateaux"
+                          id="gateaux"
+                          className={styles["form-select"]}
+                          value={item.gateau}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            setGateaux((prev) =>
+                              prev.map((g, i) =>
+                                i === index ? { ...g, gateau: value } : g
+                              )
+                            );
+                            updatePrix(
+                              value,
+                              item.taille,
+                              item.quantite,
+                              index
+                            );
+                          }}>
+                          <option value="">-- Selectionner --</option>
+                          <option value="dahlia">Dahlia</option>
+                          <option value="camélia">Camélia</option>
+                          <option value="iris">Iris</option>
+                          <option value="pivoine">Pivoine</option>
+                          <option value="mimosa">Mimosa</option>
+                        </select>
+                      </div>
 
-                    {/* Choix de la taille */}
-                    <div
-                      className={`${styles["form-col"]} ${styles["taille"]}`}>
-                      {index === 0 && (
-                        <label htmlFor="" className={styles["form-label"]}>
-                          <h3>Taille</h3>
-                        </label>
-                      )}
-                      <select
-                        name="taille"
-                        id="taille"
-                        className={styles["form-select"]}
-                        value={item.taille}
-                        onChange={(e) => {
-                          const value = e.target.value;
-                          setGateaux((prev) =>
-                            prev.map((g, i) =>
-                              i === index ? { ...g, taille: value } : g
-                            )
-                          );
-                          updatePrix(item.gateau, value, item.quantite, index);
-                        }}>
-                        <option value="">-- Selectionner --</option>
-                        <option value="6-8 Parts">6-8 Parts</option>
-                        <option value="8-10 Parts">8-10 Parts</option>
-                        <option value="10-12 Parts">10-12 Parts</option>
-                      </select>
-                    </div>
+                      {/* Choix de la taille */}
+                      <div
+                        className={`${styles["form-col"]} ${styles["taille"]}`}>
+                        {(alwaysShowLabels || index === 0) && (
+                          <label htmlFor="" className={styles["form-label"]}>
+                            <h3>Taille</h3>
+                          </label>
+                        )}
+                        <select
+                          name="taille"
+                          id="taille"
+                          className={styles["form-select"]}
+                          value={item.taille}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            setGateaux((prev) =>
+                              prev.map((g, i) =>
+                                i === index ? { ...g, taille: value } : g
+                              )
+                            );
+                            updatePrix(
+                              item.gateau,
+                              value,
+                              item.quantite,
+                              index
+                            );
+                          }}>
+                          <option value="">-- Selectionner --</option>
+                          <option value="6-8 Parts">6-8 Parts</option>
+                          <option value="8-10 Parts">8-10 Parts</option>
+                          <option value="10-12 Parts">10-12 Parts</option>
+                        </select>
+                      </div>
 
-                    {/* Choix de la quantité */}
-                    <div
-                      className={`${styles["form-col"]} ${styles["quantite"]}`}>
-                      {index === 0 && (
-                        <label htmlFor="" className={styles["form-label"]}>
-                          <h3>Quantité</h3>
-                        </label>
-                      )}
-                      <input
-                        type="number"
-                        name="quantite"
-                        id="quantite"
-                        className={styles["form-input"]}
-                        min={1}
-                        value={item.quantite}
-                        onChange={(e) => {
-                          const newQuantite = parseInt(e.target.value);
-                          setGateaux((prev) =>
-                            prev.map((g, i) =>
-                              i === index ? { ...g, quantite: newQuantite } : g
-                            )
-                          );
-                          updatePrix(
-                            item.gateau,
-                            item.taille,
-                            newQuantite,
-                            index
-                          );
-                        }}
-                      />
-                    </div>
+                      {/* Choix de la quantité */}
+                      <div
+                        className={`${styles["form-col"]} ${styles["quantite"]}`}>
+                        {(alwaysShowLabels || index === 0) && (
+                          <label htmlFor="" className={styles["form-label"]}>
+                            <h3>Quantité</h3>
+                          </label>
+                        )}
+                        <input
+                          type="number"
+                          name="quantite"
+                          id="quantite"
+                          className={styles["form-input"]}
+                          min={1}
+                          value={item.quantite}
+                          onChange={(e) => {
+                            const newQuantite = parseInt(e.target.value);
+                            setGateaux((prev) =>
+                              prev.map((g, i) =>
+                                i === index
+                                  ? { ...g, quantite: newQuantite }
+                                  : g
+                              )
+                            );
+                            updatePrix(
+                              item.gateau,
+                              item.taille,
+                              newQuantite,
+                              index
+                            );
+                          }}
+                        />
+                      </div>
 
-                    {/* Prix */}
-                    <div className={`${styles["form-col"]} ${styles["prix"]}`}>
-                      {index === 0 && (
-                        <label htmlFor="" className={styles["form-label"]}>
-                          <h3>Prix</h3>
-                        </label>
-                      )}
-                      <input
-                        type="text"
-                        name="prix"
-                        id="prix"
-                        className={styles["form-input"]}
-                        placeholder="0 €"
-                        value={item.prix ? `${item.prix.toFixed(2)} €` : ""}
-                        disabled
-                      />
-                    </div>
+                      {/* Prix */}
+                      <div
+                        className={`${styles["form-col"]} ${styles["prix"]}`}>
+                        {(alwaysShowLabels || index === 0) && (
+                          <label htmlFor="" className={styles["form-label"]}>
+                            <h3>Prix</h3>
+                          </label>
+                        )}
+                        <input
+                          type="text"
+                          name="prix"
+                          id="prix"
+                          className={styles["form-input"]}
+                          placeholder="0 €"
+                          value={item.prix ? `${item.prix.toFixed(2)} €` : ""}
+                          disabled
+                        />
+                      </div>
 
-                    {/* Bouton pour supprimer le gateaux */}
-                    <div className={styles["btn-remove-container"]}>
-                      <button
-                        disabled={gateaux.length === 1}
-                        type="button"
-                        className={`btn btn-primary ${styles["btn-remove"]}`}
-                        onClick={() => handleRemoveCake(index)}>
-                        X
-                      </button>
+                      {/* Bouton pour supprimer le gateaux */}
+                      <div className={styles["btn-remove-container"]}>
+                        <button
+                          disabled={gateaux.length === 1}
+                          type="button"
+                          className={`btn btn-primary ${styles["btn-remove"]}`}
+                          onClick={() => handleRemoveCake(index)}>
+                          X
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
+
                 <div className={styles["sous-total-container"]}>
                   <label htmlFor="" className={styles["form-label"]}>
                     <h3>Sous-total&nbsp;: </h3>
@@ -412,6 +436,7 @@ const FormContact = () => {
                     <strong>{totalPrix.toFixed(2)} €</strong>
                   </p>
                 </div>
+
                 {/* Bouton pour ajouter un gateaux */}
                 <button
                   type="button"
@@ -424,10 +449,11 @@ const FormContact = () => {
                   }>
                   Ajouter un gâteau
                 </button>
+
                 {/* Champs textarea pour une information utiles a transmettre (facultatif) */}
                 <div className={styles["form-col"]}>
                   <label htmlFor="message" className={styles["form-label"]}>
-                    <h3>Informations utiles</h3>
+                    <h3>Message (facultatif)</h3>
                   </label>
                   <textarea
                     id="message"
@@ -442,6 +468,7 @@ const FormContact = () => {
                       }))
                     }></textarea>
                 </div>
+
                 {/* Informations personnelles */}
                 <h3>Informations personnelles</h3>
                 <div className={styles["form-row"]}>
