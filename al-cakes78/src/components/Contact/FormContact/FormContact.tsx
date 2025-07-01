@@ -673,7 +673,11 @@ const FormContact = () => {
                       </div>
                     </label>
                     <p className={styles["sous-total"]}>
-                      <strong>{fraisLivraison.toFixed(2)} €</strong>
+                      <strong>
+                        {fraisLivraison === 0
+                          ? "Gratuite"
+                          : `${fraisLivraison.toFixed(2)} €`}
+                      </strong>
                     </p>
                   </div>
                 )}
@@ -765,7 +769,7 @@ const FormContact = () => {
 
                     <div className={styles["modal-header-content"]}>
                       <div className={styles["modal-header-text"]}>
-                        <h3>Vos coordonnées</h3>
+                        <h3>Vos coordonnées :</h3>
 
                         <div className={styles["contact-info"]}>
                           <Image
@@ -829,13 +833,14 @@ const FormContact = () => {
                     </div>
 
                     {/* Tableau Gâteaux */}
+                    <h3>Gâteaux choisis :</h3>
                     <table className={styles["order-table"]}>
                       <thead>
                         <tr>
-                          <th>Gâteau</th>
+                          <th>Gâteau(x)</th>
                           <th>Taille</th>
-                          <th>Quantité</th>
-                          <th>Prix</th>
+                          <th>Unité</th>
+                          <th>€</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -872,10 +877,10 @@ const FormContact = () => {
                       <table className={styles["order-table"]}>
                         <thead>
                           <tr>
-                            <th>Département</th>
+                            <th>Dépt</th>
                             <th>Rayon</th>
                             <th>Zone</th>
-                            <th>Prix</th>
+                            <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -884,12 +889,14 @@ const FormContact = () => {
                             <td>{zoneDescription}</td>
                             <td>{zoneLivraison}</td>
                             <td>
-                              <strong>{fraisLivraison.toFixed(2)} €</strong>
+                              {fraisLivraison === 0
+                                ? "Gratuite"
+                                : `${fraisLivraison.toFixed(2)} €`}
                             </td>
                           </tr>
                           <tr>
                             <td colSpan={3}>
-                              <strong>Total avec livraison</strong>
+                              <strong>Total</strong>
                             </td>
                             <td>
                               <strong>{totalFinal.toFixed(2)} €</strong>
@@ -932,14 +939,23 @@ const FormContact = () => {
                       </div>
                     )}
 
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => {
-                        setShowSummary(false);
-                        formRef.current?.requestSubmit();
-                      }}>
-                      Envoyer ma demande
-                    </button>
+                    <div className={styles["modal-footer"]}>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => {
+                          setShowSummary(false);
+                          formRef.current?.requestSubmit();
+                        }}>
+                        Envoyer ma demande
+                      </button>
+
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={() => setShowSummary(false)}>
+                        Fermer
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
