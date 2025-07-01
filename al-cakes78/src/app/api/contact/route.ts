@@ -4,6 +4,13 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+interface Gateau {
+  gateau: string;
+  taille: string;
+  quantite: number;
+  prix: number;
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -27,9 +34,9 @@ export async function POST(req: Request) {
 
     const isCommande = objet === "commande";
 
-    const gateauxHtml = gateaux
-      ?.map(
-        (g: any) => `
+    const gateauxHtml = (gateaux as Gateau[])
+      .map(
+        (g) => `
         <tr>
           <td>${g.gateau}</td>
           <td>${g.taille}</td>
