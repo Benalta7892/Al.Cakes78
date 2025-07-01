@@ -87,10 +87,22 @@
   gap: 10px;
 }
 
+.gateaux-row {
+  border-bottom: 1px dashed var(--color-caramel);
+}
+
+.gateaux-row.vertical-layout {
+  flex-direction: column;
+}
+
 @media (max-width: 500px) {
   .form-row {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .gateaux-row {
+    padding-bottom: 10px;
   }
 }
 
@@ -146,6 +158,9 @@
   height: 100%;
   flex: 1;
   width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-self: end;
 }
 
 .btn-remove {
@@ -208,6 +223,12 @@
   display: flex;
   align-items: baseline;
   gap: 8px;
+}
+
+@media (max-width: 500px) {
+  .livraison-info {
+    flex-direction: column;
+  }
 }
 
 .zone-info {
