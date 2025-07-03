@@ -36,7 +36,7 @@ export async function POST(req: Request) {
 
     const gateauxHtml =
       isCommande && Array.isArray(gateaux)
-        ? gateaux
+        ? (gateaux as Gateau[])
             .map(
               (g) => `
         <tr>

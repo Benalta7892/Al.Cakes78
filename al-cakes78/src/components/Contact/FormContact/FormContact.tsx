@@ -441,15 +441,6 @@ const FormContact = () => {
                   );
                 })}
 
-                <div className={styles["sous-total-container"]}>
-                  <label htmlFor="" className={styles["form-label"]}>
-                    <h3>Sous-total&nbsp;: </h3>
-                  </label>
-                  <p className={styles["sous-total"]}>
-                    <strong>{totalPrix.toFixed(2)} €</strong>
-                  </p>
-                </div>
-
                 {/* Bouton pour ajouter un gateaux */}
                 <button
                   type="button"
@@ -462,6 +453,15 @@ const FormContact = () => {
                   }>
                   Ajouter un gâteau
                 </button>
+
+                <div className={styles["sous-total-container"]}>
+                  <label htmlFor="" className={styles["form-label"]}>
+                    <h3>Sous-total&nbsp;: </h3>
+                  </label>
+                  <p className={styles["sous-total"]}>
+                    <strong>{totalPrix.toFixed(2)} €</strong>
+                  </p>
+                </div>
 
                 {/* Champs textarea pour une information utiles a transmettre (facultatif) */}
                 <div className={styles["form-col"]}>
