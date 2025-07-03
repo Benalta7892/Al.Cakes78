@@ -6,6 +6,7 @@ import { useState, useRef } from "react";
 import { getDeliveryZone } from "@/utils/livraison";
 import Image from "next/image";
 import { useIsMobile } from "@/utils/hooks";
+import toast from "react-hot-toast";
 
 const FormContact = () => {
   const [showForm, setShowForm] = useState(false);
@@ -87,6 +88,8 @@ const FormContact = () => {
     const form = e.target as HTMLFormElement;
     const formType = (form.elements.namedItem("formType") as HTMLInputElement)
       ?.value;
+    const prenom = (form.elements.namedItem("prenom") as HTMLInputElement)
+      .value;
 
     if (formType === "commande") {
       const data = {
@@ -110,10 +113,15 @@ const FormContact = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
-            alert("Commande envoyée !");
+            toast.success(
+              <span>
+                Commande envoyée ! Merci <strong>{prenom}</strong>, une réponse
+                sera apportée rapidement.
+              </span>
+            );
             setShowForm(false);
           } else {
-            alert("Erreur serveur lors de l'envoi.");
+            toast.error("Une erreur est survenue lors de l'envoi.");
           }
         });
     } else if (formType === "renseignement") {
@@ -138,10 +146,15 @@ const FormContact = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
-            alert("Message envoyé !");
+            toast.success(
+              <span>
+                Message reçu ! Merci <strong>{prenom}</strong>, une réponse sera
+                apportée rapidement.
+              </span>
+            );
             setShowForm(false);
           } else {
-            alert("Erreur serveur lors de l'envoi.");
+            toast.error("Une erreur est survenue lors de l'envoi.");
           }
         });
     }
