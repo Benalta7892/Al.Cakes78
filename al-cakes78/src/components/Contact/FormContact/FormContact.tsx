@@ -486,7 +486,7 @@ const FormContact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className={styles["form-input"]}
+                    className={`${styles["form-input"]} ${styles["message"]}`}
                     placeholder="Exemple : Allergies, etc."
                     value={formValues.message}
                     onChange={(e) =>
@@ -715,7 +715,8 @@ const FormContact = () => {
                       type="date"
                       id="date"
                       name="date"
-                      className={styles["form-input"]}
+                      className={`${styles["form-input"]} ${styles["date"]}`}
+                      placeholder="jj/mm/aaaa"
                       required
                       value={formValues.date}
                       onChange={(e) =>

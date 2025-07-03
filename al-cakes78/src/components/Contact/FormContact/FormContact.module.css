@@ -134,6 +134,14 @@
   border: 2px solid var(--color-caramel);
 }
 
+.form-input.message {
+  max-width: 100% !important;
+}
+
+.form-input.date {
+  max-width: 100% !important;
+}
+
 /* .gateaux {
   display: flex;
   flex: 3;
