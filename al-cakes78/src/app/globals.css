@@ -281,7 +281,7 @@ p {
   z-index: -1;
 }
 
-input[type="date"] {
+/* input[type="date"] {
   min-height: 44px;
   padding: 10px;
   border: 2px solid var(--color-caramel);
@@ -290,12 +290,16 @@ input[type="date"] {
   color: var(--color-chocolate);
   background-color: white;
   box-sizing: border-box;
-}
+} */
 
 select {
   background-color: red !important;
+  height: 44px !important;
+  padding: 10px;
 }
 
 input[type="date"] {
   background-color: red !important;
+  height: 44px !important;
+  padding: 10px;
 }
