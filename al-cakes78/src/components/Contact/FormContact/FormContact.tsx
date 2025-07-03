@@ -716,7 +716,7 @@ const FormContact = () => {
                       id="date"
                       name="date"
                       className={`${styles["form-input"]} ${styles["date"]}`}
-                      placeholder="jj/mm/aaaa"
+                      placeholder="jj/mm/aaaa 📆"
                       required
                       value={formValues.date}
                       onChange={(e) =>
