@@ -715,7 +715,7 @@ const FormContact = () => {
                       type="date"
                       id="date"
                       name="date"
-                      className={styles["form-input"]}
+                      className={styles["form-select"]}
                       required
                       value={formValues.date}
                       onChange={(e) =>
