@@ -368,9 +368,9 @@ const FormContact = () => {
                             );
                           }}>
                           <option value="">-- Selectionner --</option>
-                          <option value="6-8 Parts">6-8 Parts</option>
-                          <option value="8-10 Parts">8-10 Parts</option>
-                          <option value="10-12 Parts">10-12 Parts</option>
+                          <option value="6-8p">6-8 Parts</option>
+                          <option value="8-10p">8-10 Parts</option>
+                          <option value="10-12p">10-12 Parts</option>
                         </select>
                       </div>
 
@@ -839,7 +839,7 @@ const FormContact = () => {
                         <tr>
                           <th>Gâteau(x)</th>
                           <th>Taille</th>
-                          <th>Unité</th>
+                          <th>Qté</th>
                           <th>€</th>
                         </tr>
                       </thead>
