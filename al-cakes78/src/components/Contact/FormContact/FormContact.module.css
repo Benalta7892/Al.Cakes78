@@ -47,16 +47,14 @@
 }
 
 .form-select {
-  -webkit-appearance: menulist-button;
+  /* -webkit-appearance: menulist-button;
   -moz-appearance: menulist-button;
-  appearance: menulist-button;
+  appearance: menulist-button; */
 
   color: var(--color-chocolate);
   padding: 10px;
-  /* box-shadow: 0 0 0 2px var(--color-caramel); */
   border: 2px solid var(--color-caramel);
   background-color: white;
-  /* min-height: 44px !important; */
   width: 100% !important;
   max-width: 450px !important;
 }
