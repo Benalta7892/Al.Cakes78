@@ -53,7 +53,8 @@
 
   color: var(--color-chocolate);
   padding: 10px;
-  box-shadow: 0 0 0 2px var(--color-caramel);
+  /* box-shadow: 0 0 0 2px var(--color-caramel); */
+  border: 2px solid var(--color-caramel);
   background-color: white;
   min-height: 44px;
   width: 100%;
@@ -126,10 +127,11 @@
 .form-input {
   width: 100%;
   padding: 10px;
-  box-shadow: 0 0 0 2px var(--color-caramel);
+  /* box-shadow: 0 0 0 2px var(--color-caramel); */
   color: var(--color-chocolate);
   background-color: white;
   max-width: 450px;
+  border: 2px solid var(--color-caramel);
 }
 
 /* .gateaux {

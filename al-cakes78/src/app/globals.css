@@ -281,7 +281,7 @@ p {
   z-index: -1;
 }
 
-select {
+/* select {
   -webkit-appearance: menulist-button !important;
   -moz-appearance: menulist-button !important;
   appearance: menulist-button !important;
@@ -290,4 +290,4 @@ select {
   box-shadow: 0 0 0 2px var(--color-caramel) !important;
   background-color: white !important;
   width: 100% !important;
-}
+} */
