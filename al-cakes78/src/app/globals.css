@@ -291,3 +291,11 @@ input[type="date"] {
   background-color: white;
   box-sizing: border-box;
 }
+
+select {
+  background-color: red !important;
+}
+
+input[type="date"] {
+  background-color: red !important;
+}
