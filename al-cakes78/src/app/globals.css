@@ -108,7 +108,7 @@ body::before {
   z-index: -1;
   background:
     linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
-    url("/images/background-body.jpg") center/cover no-repeat;
+    url("/images/background-body9.png") center/cover no-repeat;
 }
 
 /* === MAIN === */
