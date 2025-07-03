@@ -34,17 +34,20 @@ export async function POST(req: Request) {
 
     const isCommande = objet === "commande";
 
-    const gateauxHtml = (gateaux as Gateau[])
-      .map(
-        (g) => `
+    const gateauxHtml =
+      isCommande && Array.isArray(gateaux)
+        ? (gateaux as Gateau[])
+            .map(
+              (g) => `
         <tr>
           <td>${g.gateau}</td>
           <td>${g.taille}</td>
           <td>${g.quantite}</td>
           <td>${g.prix.toFixed(2)} €</td>
         </tr>`
-      )
-      .join("");
+            )
+            .join("")
+        : "";
 
     const livraisonHtml =
       livraisonMode === "livraison"
