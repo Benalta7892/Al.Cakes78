@@ -95,7 +95,7 @@
   flex-direction: column;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .form-row {
     flex-direction: column;
     gap: 20px;
@@ -129,6 +129,7 @@
   box-shadow: 0 0 0 2px var(--color-caramel);
   color: var(--color-chocolate);
   background-color: white;
+  max-width: 450px;
 }
 
 /* .gateaux {
