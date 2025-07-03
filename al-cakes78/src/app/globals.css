@@ -293,13 +293,11 @@ p {
 } */
 
 select {
-  background-color: red !important;
-  height: 44px !important;
+  height: 48px !important;
   padding: 10px;
 }
 
 input[type="date"] {
-  background-color: red !important;
-  height: 44px !important;
+  height: 48px !important;
   padding: 10px;
 }
