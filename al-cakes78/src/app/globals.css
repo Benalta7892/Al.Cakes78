@@ -286,13 +286,9 @@ select {
   padding: 10px;
 }
 
-/* input[type="date"] {
-  width: 100% !important;
-  max-width: 450px !important;
+input[type="date"] {
+  width: 100%;
+  max-width: 450px;
   padding: 10px;
-  height: 48px !important;
-} */
-
-.form-input.date {
-  max-width: 100% !important;
+  height: 48px;
 }
