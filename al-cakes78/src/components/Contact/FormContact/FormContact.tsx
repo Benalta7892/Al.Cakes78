@@ -42,6 +42,7 @@ const FormContact = () => {
     codePostal: "",
     city: "",
     message: "",
+    date: "",
     paiement: "",
   });
 
@@ -92,6 +93,7 @@ const FormContact = () => {
         ...formValues,
         objet: "commande",
         gateaux,
+        date: formValues.date,
         livraisonMode,
         totalPrix,
         fraisLivraison,
@@ -692,6 +694,27 @@ const FormContact = () => {
                   </p>
                 </div>
 
+                {/* Choix de la date souhaitée pour la livraison/reception de la commande */}
+                <h3>Date souhaitée :</h3>
+                <div className={styles["form-row"]}>
+                  <div className={styles["form-col"]}>
+                    <input
+                      type="date"
+                      id="date"
+                      name="date"
+                      className={styles["form-input"]}
+                      required
+                      value={formValues.date}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          date: e.target.value,
+                        }))
+                      }
+                    />
+                  </div>
+                </div>
+
                 {/* Mode de paiement préféré */}
                 <h3>Mode de paiement préféré</h3>
 
@@ -926,6 +949,19 @@ const FormContact = () => {
                         <strong>Total :</strong> {totalFinal.toFixed(2)} €
                       </p>
                     )}
+
+                    <div className={styles["align-baseline"]}>
+                      <h3>Date souhaitée :</h3>
+                      <p>
+                        {formValues.date
+                          ? new Intl.DateTimeFormat("fr-FR", {
+                              day: "2-digit",
+                              month: "2-digit",
+                              year: "numeric",
+                            }).format(new Date(formValues.date))
+                          : ""}
+                      </p>
+                    </div>
 
                     <div className={styles["align-baseline"]}>
                       <h3>Mode de paiement choisi :</h3>

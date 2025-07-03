@@ -25,6 +25,7 @@ export async function POST(req: Request) {
       codePostal,
       city,
       paiement,
+      date,
       livraisonMode,
       gateaux,
       totalPrix,
@@ -48,6 +49,14 @@ export async function POST(req: Request) {
             )
             .join("")
         : "";
+
+    const formattedDate = date
+      ? new Intl.DateTimeFormat("fr-FR", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }).format(new Date(date))
+      : null;
 
     const livraisonHtml =
       livraisonMode === "livraison"
@@ -88,7 +97,12 @@ export async function POST(req: Request) {
         </table>
 
         <br />
+
+
         ${livraisonHtml}
+
+        ${formattedDate ? `<p><strong>Date souhaitée :</strong> ${formattedDate}</p>` : ""}
+
         <p><strong>Mode de paiement :</strong> ${paiement}</p>
         <p><strong>Total final :</strong> ${totalFinal?.toFixed(2)} €</p>
       `
