@@ -711,6 +711,7 @@ const FormContact = () => {
                 <h3>Date souhaitée :</h3>
                 <div className={styles["form-row"]}>
                   <div className={styles["form-col"]}>
+                    <label htmlFor="date">(jj/mm/aaaa)</label>
                     <input
                       type="date"
                       id="date"
