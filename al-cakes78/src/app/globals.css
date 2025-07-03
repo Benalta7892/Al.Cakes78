@@ -287,8 +287,8 @@ select {
 }
 
 input[type="date"] {
-  width: 100%;
-  max-width: 450px;
-  padding: 10px;
-  height: 48px;
+  width: 100% !important;
+  max-width: 450px !important;
+  padding: 10px !important;
+  height: 48px !important;
 }
