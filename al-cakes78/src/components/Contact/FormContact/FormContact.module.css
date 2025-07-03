@@ -56,9 +56,9 @@
   /* box-shadow: 0 0 0 2px var(--color-caramel); */
   border: 2px solid var(--color-caramel);
   background-color: white;
-  min-height: 44px;
-  width: 100%;
-  max-width: 450px;
+  min-height: 44px !important;
+  width: 100% !important;
+  max-width: 450px !important;
 }
 
 .form-section {
