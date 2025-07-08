@@ -17,6 +17,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image vector-after-hero"
+        data-aos="fade-up"
       />
 
       <CardInfos />

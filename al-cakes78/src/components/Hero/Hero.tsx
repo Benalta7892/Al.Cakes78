@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Hero.module.css";
 import HeroCarousel from "./HeroCarousel";
 import { EmblaOptionsType } from "embla-carousel";
@@ -16,8 +18,10 @@ const Hero = () => {
     <section className={`${styles["hero"]} hero`}>
       <HeroCarousel slides={SLIDES} options={OPTIONS} />
       <div className={styles["hero-content"]}>
-        <h1 className={styles["hero-title"]}>Entremets pour vos Évènements</h1>
-        <div className={styles["hero-buttons"]}>
+        <h1 data-aos="fade-up" className={styles["hero-title"]}>
+          Entremets pour vos Évènements
+        </h1>
+        <div data-aos="fade-up" className={styles["hero-buttons"]}>
           <Link href="/gateaux" className="btn btn-primary">
             Découvrir
           </Link>
