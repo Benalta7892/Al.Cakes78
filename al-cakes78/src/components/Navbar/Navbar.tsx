@@ -61,12 +61,15 @@ const Navbar = () => {
             isOpen ? styles["open"] : ""
           }`}>
           <Link
+            data-aos="fade-right"
             href="/"
             className={`${pathname === "/" ? styles["active"] : ""}`}
             onClick={handleLinkClick}>
             Accueil
           </Link>
+
           <Link
+            data-aos="fade-right"
             href="/gateaux"
             className={`${pathname === "/gateaux" ? styles["active"] : ""}`}
             onClick={handleLinkClick}>
@@ -85,10 +88,12 @@ const Navbar = () => {
               height={237}
               alt="Logo"
               className={styles["img"]}
+              data-aos="fade-down"
             />
           </Link>
 
           <Link
+            data-aos="fade-left"
             href="/services"
             className={`${pathname === "/services" ? styles["active"] : ""}`}
             onClick={handleLinkClick}>
@@ -96,6 +101,7 @@ const Navbar = () => {
           </Link>
 
           <Link
+            data-aos="fade-left"
             href="/contact"
             className={`${pathname === "/contact" ? styles["active"] : ""}`}
             onClick={handleLinkClick}>

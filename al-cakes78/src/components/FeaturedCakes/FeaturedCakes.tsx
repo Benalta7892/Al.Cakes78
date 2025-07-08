@@ -10,7 +10,10 @@ const FeaturedCakes = () => {
   const OPTIONS: EmblaOptionsType = { loop: true };
 
   return (
-    <section className={styles["featured-cakes-section"]}>
+    <section
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      className={styles["featured-cakes-section"]}>
       <h2>L&apos;envie commence ici</h2>
 
       <div className={styles["carousel-wrapper"]}>

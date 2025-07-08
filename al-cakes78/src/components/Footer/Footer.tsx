@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={`${styles["footer"]}`}>
+    <footer data-aos="fade-up" className={`${styles["footer"]}`}>
       <Image
         src="/images/last-image.JPG"
         fill

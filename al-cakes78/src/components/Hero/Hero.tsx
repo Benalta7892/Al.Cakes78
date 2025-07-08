@@ -18,10 +18,10 @@ const Hero = () => {
     <section className={`${styles["hero"]} hero`}>
       <HeroCarousel slides={SLIDES} options={OPTIONS} />
       <div className={styles["hero-content"]}>
-        <h1 data-aos="fade-up" className={styles["hero-title"]}>
+        <h1 data-aos="zoom-in" className={styles["hero-title"]}>
           Entremets pour vos Évènements
         </h1>
-        <div data-aos="fade-up" className={styles["hero-buttons"]}>
+        <div data-aos="zoom-in" className={styles["hero-buttons"]}>
           <Link href="/gateaux" className="btn btn-primary">
             Découvrir
           </Link>

@@ -5,11 +5,14 @@ import TESTIMONIALS from "@/data/testimonial";
 const Testimonials = () => {
   return (
     <section className={styles["testimonials-section"]}>
-      <h2>Merci pour votre confiance</h2>
+      <h2 data-aos="zoom-in">Merci pour votre confiance</h2>
 
       <div className={styles["testimonials-grid"]}>
         {TESTIMONIALS.map((testimonial, index) => (
-          <div key={testimonial.id} className={styles[`div${index + 1}`]}>
+          <div
+            data-aos="fade-up-left"
+            key={testimonial.id}
+            className={styles[`div${index + 1}`]}>
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           </div>
         ))}
