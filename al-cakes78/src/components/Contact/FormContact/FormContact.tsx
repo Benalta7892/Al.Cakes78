@@ -294,7 +294,7 @@ const FormContact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className={styles["form-input"]}
+                    className={`${styles["form-input"]} ${styles["message"]}`}
                     required></textarea>
                 </div>
 

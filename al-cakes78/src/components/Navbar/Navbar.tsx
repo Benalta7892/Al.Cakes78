@@ -61,16 +61,16 @@ const Navbar = () => {
             isOpen ? styles["open"] : ""
           }`}>
           <Link
+            href="/"
+            className={`${pathname === "/" ? styles["active"] : ""}`}
+            onClick={handleLinkClick}>
+            Accueil
+          </Link>
+          <Link
             href="/gateaux"
             className={`${pathname === "/gateaux" ? styles["active"] : ""}`}
             onClick={handleLinkClick}>
-            Nos gateaux
-          </Link>
-          <Link
-            href="/services"
-            className={`${pathname === "/services" ? styles["active"] : ""}`}
-            onClick={handleLinkClick}>
-            Services
+            Mes Entremets
           </Link>
 
           {/* Logo for desktop view */}
@@ -89,11 +89,12 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/a-propos"
-            className={`${pathname === "/a-propos" ? styles["active"] : ""}`}
+            href="/services"
+            className={`${pathname === "/services" ? styles["active"] : ""}`}
             onClick={handleLinkClick}>
-            À propos
+            Services
           </Link>
+
           <Link
             href="/contact"
             className={`${pathname === "/contact" ? styles["active"] : ""}`}
