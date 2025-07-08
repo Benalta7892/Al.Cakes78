@@ -3,7 +3,9 @@ import styles from "./ContactCTA.module.css";
 
 const ContactCTA = () => {
   return (
-    <section className={`${styles["contact-cta-section"]} bordered`}>
+    <section
+      data-aos="zoom-in"
+      className={`${styles["contact-cta-section"]} bordered`}>
       <div className={`${styles["contact-cta-content"]} bordered`}>
         <h2 className={styles["contact-cta-title"]}>
           Une envie, une commande, une question ?

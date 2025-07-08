@@ -17,7 +17,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image vector-after-hero"
-        data-aos="fade-up"
+        data-aos="zoom-in"
       />
 
       <CardInfos />
@@ -28,6 +28,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <FeaturedCakes />
@@ -38,6 +39,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <AboutSection />
@@ -48,6 +50,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <Testimonials />
@@ -58,6 +61,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <ContactCTA />
@@ -68,6 +72,7 @@ export default function Home() {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
     </>
   );

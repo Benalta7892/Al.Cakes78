@@ -36,6 +36,7 @@ const CardInfos = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       {isMobile ? (
@@ -51,6 +52,7 @@ const CardInfos = () => {
           text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
           imageSrc="/images/cardinfo2.jpg"
           alt="Image pour illustrer la beauté des gâteaux"
+          data-aos="zoom-out-left"
         />
       )}
     </section>
