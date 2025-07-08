@@ -29,6 +29,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image vector-after-hero"
+        data-aos="zoom-in"
       />
 
       <CakesSection />
@@ -39,6 +40,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <ContactCTA />
@@ -49,6 +51,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
     </>
   );

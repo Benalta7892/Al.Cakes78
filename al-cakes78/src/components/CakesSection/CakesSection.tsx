@@ -9,7 +9,7 @@ const CakesSection = () => {
     <section className={`${styles["cakes-section"]} cakes-section`}>
       <div className={styles["cakes-section-grid"]}>
         {CAKES.map(({ id, name, slug, images, description, price }) => (
-          <article key={id}>
+          <article data-aos="fade-up" key={id}>
             <CakeCard
               id={id}
               name={name}
