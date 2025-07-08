@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ToasterProvider from "@/components/ToastPreview/ToastPreview";
+import "aos/dist/aos.css";
+import AOSProvider from "@/components/AOSProvider/AOSProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,13 +36,15 @@ export default function RootLayout({
     <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${domine.variable} antialiased`}>
-        <Header />
+        <AOSProvider>
+          <Header />
 
-        <ToasterProvider />
+          <ToasterProvider />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <Footer />
+          <Footer />
+        </AOSProvider>
       </body>
     </html>
   );
