@@ -14,7 +14,7 @@ const ServicesSection = () => {
         /> */}
         <div
           className={`${styles["services-container"]} bordered`}
-          data-aos="fade-right">
+          data-aos="fade-up">
           <div className={`${styles["services-content"]} bordered`}>
             <div className={styles["services-header"]}>
               <div className={styles["services-logo"]}>
@@ -50,7 +50,7 @@ const ServicesSection = () => {
 
         <div
           className={`${styles["services-container"]} bordered`}
-          data-aos="fade-left">
+          data-aos="fade-up">
           <div className={`${styles["services-content"]} bordered`}>
             <div className={styles["services-header"]}>
               <div className={styles["services-logo"]}>
@@ -86,7 +86,7 @@ const ServicesSection = () => {
 
         <div
           className={`${styles["services-container"]} bordered`}
-          data-aos="fade-right">
+          data-aos="fade-up">
           <div className={`${styles["services-content"]} bordered`}>
             <div className={styles["services-header"]}>
               <div className={styles["services-logo"]}>

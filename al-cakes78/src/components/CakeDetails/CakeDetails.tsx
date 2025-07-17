@@ -9,7 +9,7 @@ type Props = {
 
 const CakeDetails = ({ cake }: Props) => {
   return (
-    <section className={styles["cake-details-section"]}>
+    <section className={styles["cake-details-section"]} data-aos="fade-up">
       {/* Afficher les images du gateaux */}
       <CakeImageDisplay name={cake.name} images={cake.images} />
 
