@@ -43,8 +43,13 @@ const Footer = () => {
       </Link>
 
       <p className={styles["rights"]}>
-        📍Versailles - Yvelines 78 •
-        <br />© {new Date().getFullYear()} ALL RIGHTS RESERVED •
+        •📍Versailles - Yvelines 78 •
+        <br />•{" "}
+        <Link href="/mentions-legales" className={styles["legal-link"]}>
+          Mentions légales
+        </Link>{" "}
+        •
+        <br />• © {new Date().getFullYear()} TOUS DROITS RÉSERVÉS •
       </p>
     </footer>
   );
