@@ -8,8 +8,8 @@ import Link from "next/link";
 const OPTIONS: EmblaOptionsType = { loop: true };
 
 const SLIDES = [
-  "/images/slide1.jpg",
-  "/images/slide2.jpg",
+  "/images/slide4.png",
+  "/images/slide5.png",
   "/images/slide3.jpg",
 ];
 
@@ -18,12 +18,13 @@ const Hero = () => {
     <section className={`${styles["hero"]} hero`}>
       <HeroCarousel slides={SLIDES} options={OPTIONS} />
       <div className={styles["hero-content"]}>
+        <h4 data-aos="zoom-in">Bienvenue dans ma vitrine en ligne</h4>
         <h1 data-aos="zoom-in" className={styles["hero-title"]}>
           Entremets pour vos Évènements
         </h1>
         <div data-aos="zoom-in" className={styles["hero-buttons"]}>
           <Link href="/gateaux" className="btn btn-primary">
-            Découvrir
+            Découvrir mes créations
           </Link>
           <Link href="/contact" className="btn btn-secondary">
             Besoin d&apos;un renseignement ?

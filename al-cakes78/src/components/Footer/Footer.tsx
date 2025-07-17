@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer data-aos="fade-up" className={`${styles["footer"]}`}>
       <Image
-        src="/images/last-image.JPG"
+        src="/images/footerImg.png"
         fill
         alt="Image représentant plusieurs gâteaux"
         className={styles["image-after-contact-cta"]}
@@ -43,7 +43,7 @@ const Footer = () => {
       </Link>
 
       <p className={styles["rights"]}>
-        📍Yvelines 78
+        📍Versailles - Yvelines 78 •
         <br />© {new Date().getFullYear()} ALL RIGHTS RESERVED •
       </p>
     </footer>

@@ -9,7 +9,7 @@ const AboutSection = () => {
           <div className={`${styles["about-image-container"]} bordered`}>
             <div className={`${styles["about-image"]} bordered`}>
               <Image
-                src="/images/img-about.png"
+                src="/images/img-about1.png"
                 width={579}
                 height={873}
                 alt="Photo de la chef"

@@ -26,7 +26,7 @@ const CardInfos = () => {
       <InfoCard
         title="Le goût de la qualité"
         text="Des saveurs vraies, choisies avec soin, parce que chaque bouchée parle d’elle-même."
-        imageSrc="/images/cardinfo1.jpg"
+        imageSrc="/images/cardinfo2.png"
         alt="Image pour illustrer le gout de la qualité"
       />
 
