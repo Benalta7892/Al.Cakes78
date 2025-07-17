@@ -161,7 +161,9 @@ const FormContact = () => {
   };
 
   return (
-    <section className={`${styles["form-contact-section"]} bordered`}>
+    <section
+      className={`${styles["form-contact-section"]} bordered`}
+      data-aos="fade-up">
       <div className={`${styles["form-contact-container"]} bordered`}>
         <h2>Formulaire de contact</h2>
         <div className={styles["disclaimer-container"]}>

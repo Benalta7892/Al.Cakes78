@@ -8,7 +8,7 @@ type IntroSectionProps = {
 const IntroSection = ({ title, description }: IntroSectionProps) => {
   return (
     <section
-      data-aos="fade-up"
+      // data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       className={styles["intro-section"]}>
       <h2>{title}</h2>

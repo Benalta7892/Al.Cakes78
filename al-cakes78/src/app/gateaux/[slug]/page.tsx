@@ -34,6 +34,7 @@ export default async function Page(props: Props) {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <CakeDetails cake={cake} />
@@ -44,6 +45,7 @@ export default async function Page(props: Props) {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <ContactCTA />
@@ -54,6 +56,7 @@ export default async function Page(props: Props) {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
     </>
   );

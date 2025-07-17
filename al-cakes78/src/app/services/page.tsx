@@ -11,6 +11,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <ServicesSection />
@@ -21,6 +22,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <ContactCTA />
@@ -31,6 +33,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
     </>
   );
