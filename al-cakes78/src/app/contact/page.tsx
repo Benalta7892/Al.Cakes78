@@ -10,6 +10,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
 
       <FormContact />
@@ -20,6 +21,7 @@ const page = () => {
         height={100}
         alt="Image de séparation"
         className="vector-image"
+        data-aos="zoom-in"
       />
     </>
   );
