@@ -10,7 +10,7 @@ type Props = {
 
 const InfoCard = ({ title, text, imageSrc, alt }: Props) => {
   return (
-    <article data-aos="fade-right" className={styles["card"]}>
+    <article data-aos="fade-up" className={styles["card"]}>
       <div className={styles["image-wrapper"]}>
         <Image
           src={imageSrc}

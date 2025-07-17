@@ -10,7 +10,7 @@ const Testimonials = () => {
       <div className={styles["testimonials-grid"]}>
         {TESTIMONIALS.map((testimonial, index) => (
           <div
-            data-aos="fade-up-left"
+            data-aos="fade-up"
             key={testimonial.id}
             className={styles[`div${index + 1}`]}>
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />

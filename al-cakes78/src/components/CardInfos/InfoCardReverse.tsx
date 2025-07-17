@@ -11,7 +11,7 @@ type Props = {
 const InfoCardReverse = ({ title, text, imageSrc, alt }: Props) => {
   return (
     <article
-      data-aos="fade-left"
+      data-aos="fade-up"
       className={`${styles["card"]} ${styles["card-reverse"]}`}>
       <div className={styles["image-wrapper"]}>
         <Image

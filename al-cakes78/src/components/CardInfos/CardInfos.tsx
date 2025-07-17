@@ -52,7 +52,7 @@ const CardInfos = () => {
           text="Un dessert se déguste d’abord avec les yeux. Ici, chaque création raconte une histoire délicieuse."
           imageSrc="/images/cardinfo2.jpg"
           alt="Image pour illustrer la beauté des gâteaux"
-          data-aos="zoom-out-left"
+          data-aos="fade-up"
         />
       )}
     </section>
