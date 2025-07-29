@@ -24,7 +24,7 @@ const Hero = () => {
         </h1>
         <div data-aos="zoom-in" className={styles["hero-buttons"]}>
           <Link href="/gateaux" className="btn btn-primary">
-            Découvrir tous mes entremets
+            Découvrez tous mes entremets
           </Link>
           <Link href="/contact" className="btn btn-secondary">
             Besoin d&apos;un renseignement ?
