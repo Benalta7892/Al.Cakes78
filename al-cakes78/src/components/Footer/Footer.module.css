@@ -50,6 +50,10 @@
 
 .rights {
   color: var(--color-chocolate);
+}
+
+.rights-link {
+  color: var(--color-caramel);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
