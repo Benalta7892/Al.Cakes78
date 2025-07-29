@@ -20,7 +20,7 @@ const FeaturedCakes = () => {
       </div>
 
       <Link href={"/gateaux"} className="btn btn-primary">
-        Découvrir tous nos gâteaux
+        Découvrir tous mes entremets
       </Link>
     </section>
   );

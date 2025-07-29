@@ -106,6 +106,15 @@
   transform: scaleX(1);
 }
 
+.nav-link {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  text-align: center;
+  white-space: nowrap; */
+}
+
 @media (max-width: 850px) {
   .navlinks-container a {
     margin: 0 14px;
