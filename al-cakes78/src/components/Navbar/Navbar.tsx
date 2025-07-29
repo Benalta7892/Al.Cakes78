@@ -63,7 +63,7 @@ const Navbar = () => {
           <Link
             data-aos="fade-right"
             href="/"
-            className={`${pathname === "/" ? styles["active"] : ""}`}
+            className={`${pathname === "/" ? styles["active"] : ""} ${styles["nav-link"]}`}
             onClick={handleLinkClick}>
             Accueil
           </Link>
@@ -71,9 +71,9 @@ const Navbar = () => {
           <Link
             data-aos="fade-right"
             href="/gateaux"
-            className={`${pathname === "/gateaux" ? styles["active"] : ""}`}
+            className={`${pathname === "/gateaux" ? styles["active"] : ""} ${styles["nav-link"]}`}
             onClick={handleLinkClick}>
-            Mes Entremets
+            Entremets
           </Link>
 
           {/* Logo for desktop view */}
@@ -95,7 +95,7 @@ const Navbar = () => {
           <Link
             data-aos="fade-left"
             href="/services"
-            className={`${pathname === "/services" ? styles["active"] : ""}`}
+            className={`${pathname === "/services" ? styles["active"] : ""} ${styles["nav-link"]}`}
             onClick={handleLinkClick}>
             Services
           </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
           <Link
             data-aos="fade-left"
             href="/contact"
-            className={`${pathname === "/contact" ? styles["active"] : ""}`}
+            className={`${pathname === "/contact" ? styles["active"] : ""} ${styles["nav-link"]}`}
             onClick={handleLinkClick}>
             Contact
           </Link>
