@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "AL.Cakes",
     images: [
       {
-        url: "/images/Logo.svg",
+        url: "https://al-cakes.com/images/Logo.svg",
         width: 1200,
         height: 630,
         alt: "AL.Cakes - Entremets faits maison à Versailles",
