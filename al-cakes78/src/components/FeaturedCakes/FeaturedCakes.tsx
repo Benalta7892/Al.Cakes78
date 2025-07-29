@@ -3,7 +3,6 @@ import { CAKES } from "@/data/cakes";
 import FeaturedCakesCarousel from "./FeaturedCakesCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import Link from "next/link";
-// import Link from "next/link";
 
 const FeaturedCakes = () => {
   const featuredCakes = CAKES.filter((cake) => cake.isFeatured);
@@ -12,7 +11,7 @@ const FeaturedCakes = () => {
   return (
     <section
       data-aos="fade-up"
-      data-aos-anchor-placement="bottom-bottom"
+      // data-aos-anchor-placement="bottom-bottom"
       className={styles["featured-cakes-section"]}>
       <h2>L&apos;envie commence ici</h2>
 
