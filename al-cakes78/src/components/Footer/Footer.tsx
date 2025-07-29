@@ -45,8 +45,17 @@ const Footer = () => {
       <p className={styles["rights"]}>
         •📍Versailles - Yvelines 78 •
         <br />•{" "}
-        <Link href="/mentions-legales" className={styles["legal-link"]}>
+        <Link href="/mentions-legales" className={styles["rights-link"]}>
           Mentions légales
+        </Link>{" "}
+        •
+        <br />• Réalisé avec 🍰 par{" "}
+        <Link
+          href="https://www.benoit-alexandre.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles["rights-link"]}>
+          Benoit ALEXANDRE
         </Link>{" "}
         •
         <br />• © {new Date().getFullYear()} TOUS DROITS RÉSERVÉS •
