@@ -10,6 +10,7 @@ const Navbar = () => {
   const handleLinkClick = () => setIsOpen(false);
   const navLinksRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const isActive = pathname.startsWith("/gateaux");
 
   useEffect(() => {
     const handleResize = () => {
@@ -71,7 +72,7 @@ const Navbar = () => {
           <Link
             data-aos="fade-right"
             href="/gateaux"
-            className={`${pathname === "/gateaux" ? styles["active"] : ""} ${styles["nav-link"]}`}
+            className={`${isActive ? styles["active"] : ""} ${styles["nav-link"]}`}
             onClick={handleLinkClick}>
             Entremets
           </Link>
