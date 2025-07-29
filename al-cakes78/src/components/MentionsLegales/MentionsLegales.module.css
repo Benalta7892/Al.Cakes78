@@ -1,0 +1,19 @@
+.mentions-legales-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.update-date {
+  font-weight: 900;
+}
+
+.mentions-legales-section p {
+  padding-inline: 18px;
+}
+
+.mentions-legales-section a {
+  text-decoration: solid underline;
+}
