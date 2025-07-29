@@ -1,0 +1,28 @@
+.breadcrumb {
+  margin: 20px 0;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+  color: var(--color-chocolate);
+}
+
+.breadcrumb a {
+  /* color: var(--color-chocolate); */
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration: underline 1px;
+}
