@@ -2,7 +2,7 @@
 
 import styles from "./FormContact.module.css";
 import { CAKES } from "@/data/cakes";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { getDeliveryZone } from "@/utils/livraison";
 import Image from "next/image";
 import { useIsMobile } from "@/utils/hooks";
@@ -49,6 +49,13 @@ const FormContact = () => {
 
   const isMobile = useIsMobile();
   const formRef = useRef<HTMLFormElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (showSummary && modalRef.current) {
+      modalRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [showSummary]);
 
   const handleClick = () => {
     setShowForm(!showForm);
@@ -82,8 +89,16 @@ const FormContact = () => {
     0
   );
 
+  const simulateSubmit = true;
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (simulateSubmit) {
+      toast.success("Formulaire soumis avec succès (simulation) !");
+      setShowForm(false);
+      return;
+    }
 
     const form = e.target as HTMLFormElement;
     const formType = (form.elements.namedItem("formType") as HTMLInputElement)
@@ -803,7 +818,9 @@ const FormContact = () => {
 
             {showSummary && (
               <div className={`${styles["modal-overlay"]}`}>
-                <div className={`${styles["modal-content"]} bordered`}>
+                <div
+                  ref={modalRef}
+                  className={`${styles["modal-content"]} bordered`}>
                   <div className={`${styles["modal-header"]} bordered`}>
                     <h2>Détails de la commande</h2>
 
