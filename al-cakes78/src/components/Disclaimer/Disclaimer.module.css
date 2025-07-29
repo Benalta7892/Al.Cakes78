@@ -1,0 +1,18 @@
+.disclaimer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
+}
+
+.warning-icon-cake-page {
+  font-size: var(--fs-26);
+}
+
+.disclaimer {
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
