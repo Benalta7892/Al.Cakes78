@@ -4,6 +4,7 @@ import ContactCTA from "@/components/ContactCTA/ContactCTA";
 import { CAKES } from "@/data/cakes";
 import Image from "next/image";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Disclaimer from "@/components/Disclaimer/Disclaimer";
 
 // Depuis Next.js 15.3, le paramètre `params` est devenu une PROMESSE (async).
 // Si on ne fait pas "await", ça plante au build !
@@ -47,6 +48,8 @@ export default async function Page(props: Props) {
       />
 
       <CakeDetails cake={cake} />
+
+      <Disclaimer />
 
       <Image
         src="/images/vector.svg"
