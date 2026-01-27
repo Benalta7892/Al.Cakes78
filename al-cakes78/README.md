@@ -37,6 +37,6 @@ Outils : Vercel (hébergement), GitHub
 
 ---
 
-🌐 Lien du site
+## 🌐 Lien du site
 
 👉 www.al-cakes.com
